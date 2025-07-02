@@ -1,0 +1,41 @@
+@import url("https://db.onlinewebfonts.com/c/700249608338e4ee5f80d2dc4f35430c?family=BC+Alphapipe+RB+Regular");
+@import url("https://db.onlinewebfonts.com/c/21bfa7d415073b05f611f3d15588ffd8?family=Quicksand");
+@import "tailwindcss";
+
+@theme {
+    --font-alphapipe: "BC Alphapipe RB Regular";
+    --font-sans: "Quicksand";
+
+    --color-primary: oklch(0.3108 0.1012 255.87);
+    --color-secondary: oklch(0.9616 0.0148 218.05);
+    --color-aletho-orange: oklch(0.7929 0.1693 70.15);
+    --color-aletho-light-blue: oklch(0.9245 0.0291 221.41);
+}
+
+
+h1 {
+    font-family: "BC Alphapipe RB Regular", Calibri, sans-serif;
+    font-size: 5rem;
+    font-weight: 300;
+    color: text-primary;
+}
+
+h2 {
+    font-family: "BC Alphapipe RB Regular", Calibri, sans-serif;
+    font-size: 3rem;
+}
+
+h3 {
+    font-family: "BC Alphapipe RB Regular", Calibri, sans-serif;
+    font-size: 3rem;
+    font-weight: 300;
+}
+
+h4 {
+    font-family: "BC Alphapipe RB Regular", Calibri, sans-serif;
+    font-size: 2.5rem;
+}
+
+li::marker {
+    color: #ffa50f;
+}
