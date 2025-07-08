@@ -4,5 +4,5 @@
  */
 ?>
 <p <?php echo get_block_wrapper_attributes(); ?>>
-	<?php esc_html_e( 'Myheader – hello from a dynamic block!', 'myheader' ); ?>
+	<?php esc_html_e( 'Gradientblock – hello from a dynamic block!', 'gradientblock' ); ?>
 </p>

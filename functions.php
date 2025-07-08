@@ -11,8 +11,7 @@ class Aletho_Theme
     {
         add_action('wp_enqueue_scripts', [$this, 'enqueue_styles']);
         add_action('init', [$this, 'register_aletho_menus']);
-        add_action('init', [$this, 'myblocks_myheader_block_init']);
-        add_action('after_setup_thene', [$this, 'wp_add_block_template_part_support']);
+        add_action('init', [$this, 'alethoblocks_gradientblock_block_init']);
     }
 
     public function enqueue_styles()
@@ -21,12 +20,7 @@ class Aletho_Theme
         wp_enqueue_style('tailwindcss', ALETHO_THEME_DIR_URI . '/src/output.css');
     }
 
-    public function wp_add_block_template_part_support()
-    {
-        add_theme_support('block-template-parts');
-    }
-
-    public function myblocks_myheader_block_init()
+    public function alethoblocks_gradientblock_block_init()
     {
         if (function_exists('wp_register_block_types_from_metadata_collection')) {
             wp_register_block_types_from_metadata_collection(__DIR__ . '/build', __DIR__ . '/build/blocks-manifest.php');

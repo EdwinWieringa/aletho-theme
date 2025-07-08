@@ -8,9 +8,7 @@
     --font-sans: "Quicksand";
     --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono",
       "Courier New", monospace;
-    --color-red-500: oklch(63.7% 0.237 25.331);
     --color-green-200: oklch(92.5% 0.084 155.995);
-    --color-indigo-600: oklch(51.1% 0.262 276.966);
     --color-white: #fff;
     --spacing: 0.25rem;
     --breakpoint-md: 48rem;
@@ -227,9 +225,6 @@
   }
   .block {
     display: block;
-  }
-  .block\! {
-    display: block !important;
   }
   .flex {
     display: flex;

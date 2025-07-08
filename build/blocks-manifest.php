@@ -1,28 +1,22 @@
 <?php
 // This file is generated. Do not modify it manually.
 return array(
-	'myheader' => array(
+	'gradientblock' => array(
 		'$schema' => 'https://schemas.wp.org/trunk/block.json',
 		'apiVersion' => 3,
-		'name' => 'myblocks/myheader',
+		'name' => 'alethoblocks/gradientblock',
 		'version' => '0.1.0',
-		'title' => 'Myheader',
+		'title' => 'Gradientblock',
 		'category' => 'widgets',
-		'description' => 'Voorbeeld beschrijving, maak toch een nieuwe!!!',
+		'icon' => 'smiley',
+		'description' => 'Example block scaffolded with Create Block tool.',
 		'example' => array(
 			
 		),
 		'supports' => array(
-			'color' => array(
-				'background' => false,
-				'text' => true
-			),
-			'html' => false,
-			'typography' => array(
-				'fontSize' => true
-			)
+			'html' => false
 		),
-		'textdomain' => 'myheader',
+		'textdomain' => 'gradientblock',
 		'editorScript' => 'file:./index.js',
 		'editorStyle' => 'file:./index.css',
 		'style' => 'file:./style-index.css',

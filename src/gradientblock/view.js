@@ -1,7 +1,3 @@
-/******/ (() => { // webpackBootstrap
-/*!******************************!*\
-  !*** ./src/myheader/view.js ***!
-  \******************************/
 /**
  * Use this file for JavaScript code that you want to run in the front-end
  * on posts/pages that contain this block.
@@ -25,8 +21,5 @@
  */
 
 /* eslint-disable no-console */
-console.log('Hello World! (from myblocks-myheader block)');
+console.log( 'Hello World! (from alethoblocks-gradientblock block)' );
 /* eslint-enable no-console */
-/******/ })()
-;
-//# sourceMappingURL=view.js.map

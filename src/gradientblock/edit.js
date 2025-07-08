@@ -31,8 +31,16 @@ import './editor.scss';
  */
 export default function Edit() {
 	return (
-		<p { ...useBlockProps() }>
-			{ __( 'Myheader – hello from edwin!', 'myheader' ) }
-		</p>
+		// <p { ...useBlockProps() }>
+		// 	{ __( 'Gradientblock – hello from the ed', 'gradientblock' ) }
+		// </p>
+	
+        <div class="min-h-64 bg-linear-135 from-secondary from-75% to-aletho-light-blue to-75%">
+            <div class="container mx-auto lg:max-w-screen-xl md:max-w-screen-md px-4 pt-20">
+                <h1 class="mb-6 text-center lg:text-left text-5xl lg:text-7xl font-alphapipe text-primary">IT-trajecten en begeleiding</h1>
+                <h3 class="text-center lg:text-left text-3xl font-alphapipe text-primary">mogelijk gemaakt in Noord-Nederland.</h3>
+            </div>
+        </div>
+    
 	);
 }

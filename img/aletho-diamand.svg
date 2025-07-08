@@ -1,5 +1,8 @@
-<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px"
-    y="0px" style="enable-background:new 0 0 755.52 620.1;" xml:space="preserve" viewBox="222.63 111.75 310.23 233.75">
+<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" 
+    xmlns:xlink="http://www.w3.org/1999/xlink" 
+    x="0px"
+    y="0px" 
+    viewBox="222.63 111.75 190 180">
     <style type="text/css">
         .st0 {
             fill: #FFD387;
@@ -11,10 +14,6 @@
 
         .st2 {
             fill: #FFA70F;
-        }
-
-        .st3 {
-            fill: #FFFFFF;
         }
     </style>
     <g>
