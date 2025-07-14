@@ -8,6 +8,27 @@ return array(
 		'version' => '0.1.0',
 		'title' => 'Gradientblock',
 		'category' => 'widgets',
+		'attributes' => array(
+			'blockContent' => array(
+				'type' => 'string',
+				'default' => 'IT-trajecten en begeleiding'
+			),
+			'allowedBlocks' => array(
+				'type' => 'array'
+			),
+			'templateLock' => array(
+				'type' => array(
+					'string',
+					'boolean'
+				),
+				'enum' => array(
+					'all',
+					'insert',
+					'contentOnly',
+					false
+				)
+			)
+		),
 		'icon' => 'smiley',
 		'description' => 'Example block scaffolded with Create Block tool.',
 		'example' => array(

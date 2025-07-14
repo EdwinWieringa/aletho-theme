@@ -18,15 +18,11 @@
     </section> -->
 
     <section>
-        <div class="">
-            <?php // block_template_part('content');
+            <?php
             while (have_posts()) {
                 the_post(); ?>
                 <p><?php the_content() ?></p>
             <?php    } ?>
-
-
-        </div>
     </section>
 
 </main>

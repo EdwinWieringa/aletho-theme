@@ -2,9 +2,11 @@
 <main>
 
     <section>
-        <div class="bg-green-200 py-3 px-4">
-            <?php // block_template_part('content'); ?>
-        </div>
+            <?php
+            while (have_posts()) {
+                the_post(); ?>
+                <p><?php the_content() ?></p>
+            <?php } ?>
     </section>
 
 </main>

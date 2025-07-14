@@ -19,7 +19,7 @@ import { useBlockProps } from '@wordpress/block-editor';
  *
  * @see https://www.npmjs.com/package/@wordpress/scripts#using-css
  */
-import './editor.scss';
+import '../output.css';
 
 /**
  * The edit function describes the structure of your block in the context of the
@@ -29,18 +29,18 @@ import './editor.scss';
  *
  * @return {Element} Element to render.
  */
-export default function Edit() {
+export default function Edit(props) {
+
+    function handleContentChange(event) {
+        props.setAttributes({ blockContent: event.target.value });
+    }
+
 	return (
-		// <p { ...useBlockProps() }>
-		// 	{ __( 'Gradientblock – hello from the ed', 'gradientblock' ) }
-		// </p>
-	
-        <div class="min-h-64 bg-linear-135 from-secondary from-75% to-aletho-light-blue to-75%">
+        // { ...useBlockProps() }
+		<div class="min-h-64 bg-linear-135 from-secondary from-75% to-aletho-light-blue to-75%">
             <div class="container mx-auto lg:max-w-screen-xl md:max-w-screen-md px-4 pt-20">
-                <h1 class="mb-6 text-center lg:text-left text-5xl lg:text-7xl font-alphapipe text-primary">IT-trajecten en begeleiding</h1>
-                <h3 class="text-center lg:text-left text-3xl font-alphapipe text-primary">mogelijk gemaakt in Noord-Nederland.</h3>
+                <input onChange={handleContentChange} type="text" value={props.attributes.blockContent} />
             </div>
-        </div>
-    
+		</div>
 	);
 }

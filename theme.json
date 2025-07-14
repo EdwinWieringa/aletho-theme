@@ -1,0 +1,54 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/theme.json",
+	"version": 2,
+	"settings": {
+		"appearanceTools": true,
+		"color": {
+			"palette": [
+				{
+					"slug": "primary-blue",
+					"color": "rgba(28,50,105)",
+					"name": "Aletho primary blue"
+				},
+				{
+					"slug": "primary-orange",
+					"color": "rgba(255,167,15)",
+					"name": "Aletho primary orange"
+				},
+				{
+					"slug": "secundary-light-blue",
+					"color": "rgba(210,235,244)",
+					"name": "Aletho secondary light blue"
+				},
+				{
+					"slug": "secundary-pale-blue",
+					"color": "rgba(232,245,249)",
+					"name": "Aletho secondary pale blue"
+				},
+				{
+					"slug": "secundary-light-orange",
+					"color": "rgba(251,189,75)",
+					"name": "Aletho secondary light orange"
+				},
+				{
+					"slug": "secundary-pale-orange",
+					"color": "rgba(253,211,135)",
+					"name": "Aletho secondary pale orange"
+				}
+			],
+			"gradients": [
+				{
+					"slug": "aletho-light-blue-gradient",
+					"gradient": "linear-gradient(135deg, rgba(232,245,244) 75%, rgb(210,235,244) 75%)",
+					"name": "Aletho secondary blue gradient"
+				},
+				{
+					"slug": "aletho-orange-gradient",
+					"gradient": "linear-gradient(135deg, rgba(253,211,135) 75%, rgb(251,189,75) 75%)",
+					"name": "Aletho secondary orange gradient"
+				}
+			]
+		}
+	},
+	"styles": {}
+}

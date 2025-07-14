@@ -5,6 +5,27 @@
   "version": "0.1.0",
   "title": "Gradientblock",
   "category": "widgets",
+  "attributes": {
+    "blockContent": {
+      "type": "string",
+      "default": "IT-trajecten en begeleiding"
+    },
+    "allowedBlocks": {
+      "type": "array"
+    },
+    "templateLock": {
+      "type": [
+        "string",
+        "boolean"
+      ],
+      "enum": [
+        "all",
+        "insert",
+        "contentOnly",
+        false
+      ]
+    }
+  },
   "icon": "smiley",
   "description": "Example block scaffolded with Create Block tool.",
   "example": {},
