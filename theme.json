@@ -4,7 +4,7 @@
 	"settings": {
 		"appearanceTools": true,
 		"layout": {
-			"contentSize": "72rem",
+			"contentSize": "66rem",
 			"wideSize": "100%"
 		},
 		"color": {
@@ -104,7 +104,7 @@
 							"fontStyle": "normal",
 							"fontStretch": "normal",
 							"src": [
-								"file:./assets/fonts/Quicksand.woff2"
+								"file:./assets/fonts/Quicksand-Regular.woff2"
 							]
 						}
 					]
