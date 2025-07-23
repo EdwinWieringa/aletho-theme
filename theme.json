@@ -1,8 +1,12 @@
 {
 	"$schema": "https://schemas.wp.org/trunk/theme.json",
-	"version": 2,
+	"version": 3,
 	"settings": {
 		"appearanceTools": true,
+		"layout": {
+			"contentSize": "72rem",
+			"wideSize": "100%"
+		},
 		"color": {
 			"palette": [
 				{
@@ -48,7 +52,144 @@
 					"name": "Aletho secondary orange gradient"
 				}
 			]
+		},
+		"spacing": {
+			"blockGap": false
+		},
+		"typography": {
+			"customFontSize": false,
+			"defaultFontSizes": false,
+			"fluid": true,
+			"fontSizes": [
+				{
+					"name": "Small",
+					"slug": "small",
+					"size": "1rem"
+				},
+				{
+					"name": "Medium",
+					"slug": "medium",
+					"size": "1.25rem"
+				},
+				{
+					"name": "Large",
+					"slug": "large",
+					"size": "1.875rem"
+				},
+				{
+					"name": "Larger",
+					"slug": "larger",
+					"size": "2.5rem"
+				},
+				{
+					"name": "Extra large",
+					"slug": "x-large",
+					"size": "2.8rem"
+				},
+				{
+					"name": "Extra extra large",
+					"slug": "xxl",
+					"size": "4rem"
+				}
+			],
+			"fontFamilies": [
+				{
+					"name": "Quicksand",
+					"slug": "quicksand",
+					"fontFamily": "Quicksand",
+					"fontFace": [
+						{
+							"fontFamily": "Quicksand",
+							"fontWeight": "400",
+							"fontStyle": "normal",
+							"fontStretch": "normal",
+							"src": [
+								"file:./assets/fonts/Quicksand.woff2"
+							]
+						}
+					]
+				},
+				{
+					"name": "BC Alphapipe RB Regular",
+					"slug": "bc-alphapipe-rb-regular",
+					"fontFamily": "BC Alphapipe RB Regular",
+					"fontFace": [
+						{
+							"fontFamily": "BC Alphapipe RB Regular",
+							"fontWeight": "400",
+							"fontStyle": "normal",
+							"fontStretch": "normal",
+							"src": [
+								"file:./assets/fonts/BC-Alphapipe-RB-Regular.woff2"
+							]
+						}
+					]
+				}
+			]
 		}
 	},
-	"styles": {}
+	"styles": {
+		"color": {
+			"text": "var(--wp--preset--color--primary-blue)"
+		},
+		"typography": {
+			"fontFamily": "var(--wp--preset--font-family--quicksand)"
+		},
+		"elements": {
+			"heading": {
+				"typography": {
+					"fontFamily": "var(--wp--preset--font-family--bc-alphapipe-rb-regular)"
+				}
+			},
+			"button": {
+				"color": {
+					"background": "var(--wp--preset--color--secundary-light-blue)",
+					"text": "var(--wp--preset--color--primary-blue)"
+				},
+				"border": {
+					"color": "var(--wp--preset--color--primary-blue)",
+					"radius": "1rem"
+				},
+				":hover": {
+					"color": {
+						"background": "var(--wp--preset--color--primary-orange)",
+						"text": "var(--wp--preset--color--white)"
+					}
+				}
+			}
+		},
+		"blocks": {
+			"core/list": {
+				"css": ".wp-block-list li::marker { color: var(--wp--preset--color--primary-orange); font-size: 1.5rem; }"
+			},
+			"core/list-item": {
+				"spacing": {
+					"margin": {
+						"bottom": "0.1rem"
+					}
+				}
+			},
+			"core/navigation": {
+				"elements": {
+					"link": {
+						":hover": {
+							"color": {
+								"text": "var(--wp--preset--color--primary-orange) !important"
+							}
+						}
+					}
+				}
+			},
+			"core/button": {
+				"spacing": {
+					"padding": {
+						"top": "0.8rem",
+						"right": "0.8rem",
+						"bottom": "0.8rem",
+						"left": "0.8rem"
+					}
+				}
+			}
+		}
+	}
 }
