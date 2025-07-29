@@ -129,6 +129,7 @@
 		}
 	},
 	"styles": {
+		"css": "footer { margin-top: 0px; }",
 		"color": {
 			"text": "var(--wp--preset--color--primary-blue)"
 		},
@@ -189,6 +190,9 @@
 						"left": "0.8rem"
 					}
 				}
+			},
+			"core/footer": {
+				"css": "height: 300px;"
 			}
 		}
 	}
