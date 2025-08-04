@@ -5,7 +5,7 @@
 		"appearanceTools": true,
 		"layout": {
 			"contentSize": "66rem",
-			"wideSize": "100%"
+			"wideSize": "72rem"
 		},
 		"color": {
 			"palette": [
@@ -67,8 +67,8 @@
 					"size": "1rem"
 				},
 				{
-					"name": "Medium",
-					"slug": "medium",
+					"name": "Default",
+					"slug": "default",
 					"size": "1.25rem"
 				},
 				{
@@ -134,7 +134,8 @@
 			"text": "var(--wp--preset--color--primary-blue)"
 		},
 		"typography": {
-			"fontFamily": "var(--wp--preset--font-family--quicksand)"
+			"fontFamily": "var(--wp--preset--font-family--quicksand)",
+			"fontSize": "1.25rem"
 		},
 		"elements": {
 			"heading": {
