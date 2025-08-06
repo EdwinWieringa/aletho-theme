@@ -8,3 +8,14 @@ Version: 1.0.0
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 */
+
+footer {
+    margin-top: 0px;
+}
+
+.diamond-absolute img {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    object-position: 310px 130px;
+}
