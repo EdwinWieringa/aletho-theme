@@ -43,12 +43,12 @@
 			"gradients": [
 				{
 					"slug": "aletho-light-blue-gradient",
-					"gradient": "linear-gradient(135deg, rgba(232,245,244) 75%, rgb(210,235,244) 75%)",
+					"gradient": "linear-gradient(135deg, rgba(232,245,244) 70%, rgb(210,235,244) 70%)",
 					"name": "Aletho secondary blue gradient"
 				},
 				{
 					"slug": "aletho-orange-gradient",
-					"gradient": "linear-gradient(135deg, rgba(253,211,135) 75%, rgb(251,189,75) 75%)",
+					"gradient": "linear-gradient(135deg, rgba(253,211,135) 70%, rgb(251,189,75) 70%)",
 					"name": "Aletho secondary orange gradient"
 				}
 			]
