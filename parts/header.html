@@ -1,11 +1,67 @@
 <!-- wp:group {"backgroundColor":"primary-blue","layout":{"type":"constrained"}} -->
 <div class="wp-block-group has-primary-blue-background-color has-background">
-    <!-- wp:group {"style":{"spacing":{"padding":{"top":"var:preset|spacing|40","bottom":"var:preset|spacing|40"}}},"layout":{"type":"flex","flexWrap":"nowrap","justifyContent":"left"}} -->
-    <div class="wp-block-group"
+    <!-- wp:group {"className":"navigation-desktop","style":{"spacing":{"padding":{"top":"var:preset|spacing|40","bottom":"var:preset|spacing|40"}}},"layout":{"type":"constrained"}} -->
+    <div class="wp-block-group navigation-desktop"
         style="padding-top:var(--wp--preset--spacing--40);padding-bottom:var(--wp--preset--spacing--40)">
-        <!-- wp:site-logo {"width":263,"shouldSyncIcon":false,"style":{"color":[],"layout":{"selfStretch":"fit","flexSize":null}}} /-->
+        <!-- wp:columns {"isStackedOnMobile":false,"style":{"spacing":{"margin":{"top":"0","bottom":"0"},"padding":{"top":"0","bottom":"0"}}}} -->
+        <div class="wp-block-columns is-not-stacked-on-mobile" style="margin-top:0;margin-bottom:0;padding-top:0;padding-bottom:0">
+            <!-- wp:column {"width":"200px"} -->
+            <div class="wp-block-column" style="flex-basis:200px">
+                <!-- wp:image {"lightbox":{"enabled":false},"id":162,"width":"265px","sizeSlug":"large","linkDestination":"custom"} -->
+                <figure class="wp-block-image size-large is-resized">
+                    <a href="http://friemelz.nl"><img
+                            src="http://friemelz.nl/wp-content/uploads/2025/07/Logo-Aletho-Wit-CMYK-1024x210.png" alt=""
+                            class="wp-image-162" style="width:265px" /></a>
+                </figure>
+                <!-- /wp:image -->
+            </div>
+            <!-- /wp:column -->
 
-        <!-- wp:navigation {"ref":36,"textColor":"white","icon":"menu","overlayBackgroundColor":"secundary-light-blue","overlayTextColor":"primary-blue","fontSize":"medium","layout":{"type":"flex","flexWrap":"wrap","justifyContent":"right","orientation":"horizontal"}} /-->
+            <!-- wp:column {"verticalAlignment":"center"} -->
+            <div class="wp-block-column is-vertically-aligned-center">
+                <!-- wp:navigation {"ref":36,"textColor":"white","overlayMenu":"never","icon":"menu","overlayBackgroundColor":"secundary-light-blue","overlayTextColor":"primary-blue","fontSize":"medium","layout":{"type":"flex","flexWrap":"nowrap","justifyContent":"center","orientation":"horizontal"}} /-->
+            </div>
+            <!-- /wp:column -->
+
+            <!-- wp:column {"width":"270px"} -->
+            <div class="wp-block-column" style="flex-basis:270px">
+                <!-- wp:buttons {"layout":{"type":"flex","flexWrap":"nowrap","justifyContent":"right"}} -->
+                <div class="wp-block-buttons">
+                    <!-- wp:button -->
+                    <div class="wp-block-button"><a
+                            class="wp-block-button__link wp-element-button"><strong>Aanmelden</strong></a></div>
+                    <!-- /wp:button -->
+
+                    <!-- wp:button {"backgroundColor":"primary-orange","textColor":"white","style":{"elements":{"link":{"color":{"text":"var:preset|color|white"}}}}} -->
+                    <div class="wp-block-button">
+                        <a
+                            class="wp-block-button__link has-white-color has-primary-orange-background-color has-text-color has-background has-link-color wp-element-button">
+                            <strong>Contact</strong>
+                        </a>
+                    </div>
+                    <!-- /wp:button -->
+                </div>
+                <!-- /wp:buttons -->
+            </div>
+            <!-- /wp:column -->
+        </div>
+        <!-- /wp:columns -->
+    </div>
+    <!-- /wp:group -->
+
+    <!-- wp:group {"className":"nav-mobile-wrap","style":{"spacing":{"margin":{"top":"0","bottom":"0"},"padding":{"top":"var:preset|spacing|50","bottom":"var:preset|spacing|50","left":"var:preset|spacing|50","right":"var:preset|spacing|50"}}},"layout":{"type":"constrained"}} -->
+    <div class="wp-block-group nav-mobile-wrap"
+        style="margin-top:0;margin-bottom:0;padding-top:var(--wp--preset--spacing--50);padding-right:var(--wp--preset--spacing--50);padding-bottom:var(--wp--preset--spacing--50);padding-left:var(--wp--preset--spacing--50)">
+        <!-- wp:navigation {"ref":323,"overlayMenu":"always","icon":"menu","overlayBackgroundColor":"secundary-pale-blue","overlayTextColor":"primary-blue","layout":{"type":"flex","justifyContent":"left"}} /-->
+
+        <!-- wp:image {"lightbox":{"enabled":false},"id":364,"sizeSlug":"large","linkDestination":"custom"} -->
+        <figure class="wp-block-image size-large">
+            <a href="http://friemelz.nl">
+                <img src="http://friemelz.nl/wp-content/uploads/2025/08/Logo-Aletho-met-grote-diamant-Wit-RGB-1024x751.png"
+                    alt="" class="wp-image-364" />
+            </a>
+        </figure>
+        <!-- /wp:image -->
     </div>
     <!-- /wp:group -->
 </div>
