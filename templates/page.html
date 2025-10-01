@@ -1,11 +1,16 @@
-<!-- wp:template-part {"slug":"header","theme":"aletho","tagName":"header"} /-->
+<!-- wp:pattern {"slug":"aletho/header-desktop"} /-->
+<!-- wp:pattern {"slug":"aletho/header-mobile"} /-->
 
 <!-- wp:pattern {"slug":"aletho/title-gradient"} /-->
 
-<!-- wp:group {"tagName":"main","metadata":{"name":"Content Section"},"style":{"spacing":{"margin":{"top":"var:preset|spacing|30","bottom":"var:preset|spacing|30"}}}} -->
-<main class="wp-block-group" style="margin-top:var(--wp--preset--spacing--30);margin-bottom:var(--wp--preset--spacing--30)">
-    <!-- wp:post-content {"style":{"dimensions":{"minHeight":"0px"}},"layout":{"type":"default"}} /-->
-</main>
+<!-- wp:group {"layout":{"type":"constrained"}} -->
+<div class="wp-block-group">
+    <!-- wp:group {"layout":{"type":"constrained"}} -->
+    <div class="wp-block-group">        
+        <!-- wp:post-content {"layout":{"type":"constrained"}} /-->
+    </div>
+    <!-- /wp:group -->
+</div>
 <!-- /wp:group -->
 
 <!-- wp:pattern {"slug":"aletho/c2a-banner"} /-->

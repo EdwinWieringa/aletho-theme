@@ -14,7 +14,7 @@ body {
     /* background-color: greenyellow; */
 }
 
-.navigation-desktop {
+.sticky-header {
     display: none;
 }
 
@@ -28,7 +28,7 @@ body {
         display: none;
     }
 
-    .navigation-desktop {
+    .sticky-header {
         display: block;
     }
 }
@@ -43,7 +43,7 @@ body {
         display: none;
     }
 
-    .navigation-desktop {
+    .sticky-header {
         display: block;
     }
 }
@@ -108,4 +108,23 @@ footer {
     bottom: 0;
     right: 0;
     object-position: 310px 130px;
+}
+
+/* Sticky header block */
+#sticky-header img {
+    transform: scale(1);
+    transform-origin: left;
+    transition: transform 0.1s cubic-bezier(.4, 0, .2, 1);
+}
+
+body.scrolled #sticky-header img {
+    transform: scale(0.9);
+}
+
+body.scrolled #sticky-header {
+    transition-duration: .1s;
+    transition-property: all;
+    transition-timing-function: cubic-bezier(.4, 0, .2, 1);
+    padding-top: 0.40rem !important;
+    padding-bottom: 0.40rem !important;
 }

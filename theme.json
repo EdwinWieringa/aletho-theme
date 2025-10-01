@@ -67,8 +67,8 @@
 					"size": "1rem"
 				},
 				{
-					"name": "Default",
-					"slug": "default",
+					"name": "Normal",
+					"slug": "normal",
 					"size": "1.25rem"
 				},
 				{
@@ -141,22 +141,6 @@
 			"heading": {
 				"typography": {
 					"fontFamily": "var(--wp--preset--font-family--bc-alphapipe-rb-regular)"
-				}
-			},
-			"button": {
-				"color": {
-					"background": "var(--wp--preset--color--secundary-light-blue)",
-					"text": "var(--wp--preset--color--primary-blue)"
-				},
-				"border": {
-					"color": "var(--wp--preset--color--primary-blue)",
-					"radius": "1rem"
-				},
-				":hover": {
-					"color": {
-						"background": "var(--wp--preset--color--primary-orange)",
-						"text": "var(--wp--preset--color--white)"
-					}
 				}
 			}
 		},

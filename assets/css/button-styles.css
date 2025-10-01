@@ -1,0 +1,107 @@
+/* Register all gradient stop variables */
+@property --stop1 {
+    syntax: '<percentage>';
+    initial-value: -40%;
+    inherits: false;
+}
+
+@property --stop2 {
+    syntax: '<percentage>';
+    initial-value: -15%;
+    inherits: false;
+}
+
+@property --stop3 {
+    syntax: '<percentage>';
+    initial-value: -10%;
+    inherits: false;
+}
+
+@property --stop4 {
+    syntax: '<percentage>';
+    initial-value: 0%;
+    inherits: false;
+}
+
+/* Shared Hover Effect */
+.wp-block-button__link.is-animated {
+  animation: gradientShift 0.6s ease forwards;
+}
+
+@keyframes gradientShift {
+  to {
+    --stop1: 100%;
+    --stop2: 125%;
+    --stop3: 130%;
+    --stop4: 140%;
+  }
+}
+
+/* Shared Button Base Styles */
+.wp-block-button .wp-block-button__link {
+  border-radius: 1rem;
+  transition:
+    --stop1 0.6s ease,
+    --stop2 0.6s ease,
+    --stop3 0.6s ease,
+    --stop4 0.6s ease;
+}
+
+/* Light Blue Button Variables */
+.wp-block-button.is-style-light-blue {
+  --color-a: var(--wp--preset--color--secundary-light-blue);
+  --color-b: var(--wp--preset--color--secundary-pale-blue);
+}
+
+.wp-block-button.is-style-light-blue .wp-block-button__link {
+  background: linear-gradient(115deg,
+    var(--color-a) var(--stop1),
+    var(--color-b) var(--stop1),
+    var(--color-b) var(--stop2),
+    var(--color-a) var(--stop2),
+    var(--color-a) var(--stop3),
+    var(--color-b) var(--stop3),
+    var(--color-b) var(--stop4),
+    var(--color-a) var(--stop4)
+  );
+  color: var(--wp--preset--color--primary-blue);
+}
+
+/* Orange Button Variables */
+.wp-block-button.is-style-orange {
+  --color-a: var(--wp--preset--color--primary-orange);
+  --color-b: var(--wp--preset--color--secundary-light-orange);
+}
+.wp-block-button.is-style-orange .wp-block-button__link {
+  background: linear-gradient(115deg,
+    var(--color-a) var(--stop1),
+    var(--color-b) var(--stop1),
+    var(--color-b) var(--stop2),
+    var(--color-a) var(--stop2),
+    var(--color-a) var(--stop3),
+    var(--color-b) var(--stop3),
+    var(--color-b) var(--stop4),
+    var(--color-a) var(--stop4)
+  );
+  color: white;
+}
+
+/* Blue Button Variables */
+.wp-block-button.is-style-blue {
+  --color-a: var(--wp--preset--color--primary-blue);
+  --color-b: rgba(85,120,190);
+}
+
+.wp-block-button.is-style-blue .wp-block-button__link {
+  background: linear-gradient(115deg,
+    var(--color-a) var(--stop1),
+    var(--color-b) var(--stop1),
+    var(--color-b) var(--stop2),
+    var(--color-a) var(--stop2),
+    var(--color-a) var(--stop3),
+    var(--color-b) var(--stop3),
+    var(--color-b) var(--stop4),
+    var(--color-a) var(--stop4)
+  );
+  color: white;
+}
