@@ -8,16 +8,25 @@ class Aletho_Theme
 
     private function __construct()
     {
-        add_action('wp_enqueue_scripts', [$this, 'enqueue_aletho_custom_styles']);
-        add_action('wp_enqueue_scripts', [$this, 'theme_load_dashicons']);
+        add_action('wp_enqueue_scripts', [$this, 'enqueue_theme_styles']);
         add_action('enqueue_block_editor_assets', [$this, 'theme_callback_function']);
         add_action('enqueue_block_assets', [$this, 'theme_js_frontend_backend_enqueue']);
         add_action('admin_menu', [$this, 'theme_admin_menu_addons']);
 
-        //add_action('init', [$this, 'theme_block_assets_styles']);
+        add_action('init', [$this, 'theme_block_assets_styles']);
         add_action('init', [$this, 'aletho_register_button_styles']);
+        add_action('init', [$this, 'aletho_register_list_styles']);
         add_action('enqueue_block_assets', [$this, 'aletho_enqueue_block_styles']);
         add_action('wp_enqueue_scripts', [$this, 'aletho_enqueue_hover_script']);
+    }
+
+    public static function enqueue_theme_styles()
+    {
+        // Enqueue main theme stylesheet
+        wp_enqueue_style('aletho-theme-style', get_stylesheet_uri());
+
+        // Enqueue Dashicons for frontend use
+        wp_enqueue_style('dashicons');
     }
 
     public static function enqueue_aletho_custom_styles()
@@ -50,7 +59,7 @@ class Aletho_Theme
         wp_enqueue_script(
             'group-navigation-script',
             ALETHO_THEME_DIR_URI . '/assets/js/group-navigation-script.js',
-            array('wp-blocks', 'wp-element', 'wp-editor'),
+            array('wp-dom-ready'),
             filemtime(ALETHO_THEME_DIR . '/assets/js/group-navigation-script.js'),
             true
         );
@@ -67,7 +76,7 @@ class Aletho_Theme
         );
     }
 
-    function aletho_enqueue_block_styles()
+    public static function aletho_enqueue_block_styles()
     {
         wp_enqueue_style(
             'aletho-block-styles',
@@ -75,8 +84,17 @@ class Aletho_Theme
             array(),
             filemtime(get_template_directory() . '/assets/css/button-styles.css')
         );
+
+        wp_enqueue_style(
+            'aletho-list-styles',
+            get_template_directory_uri() . '/assets/css/list-styles.css',
+            [],
+            filemtime(get_template_directory() . '/assets/css/list-styles.css')
+        );
     }
 
+    // Register custom styles for core/button block: Light Blue, Orange, and Blue.
+    // Styles use 'aletho-block-styles' handle and must be hooked into 'init'.
     function aletho_register_button_styles()
     {
         register_block_style(
@@ -105,6 +123,21 @@ class Aletho_Theme
                 'style_handle' => 'aletho-block-styles'
             )
         );
+    }
+
+    function aletho_register_list_styles()
+    {
+        register_block_style('core/list', [
+            'name'  => 'checkmarks',
+            'label' => 'Checkmarks',
+            'style_handle' => 'aletho-list-styles'
+        ]);
+
+        register_block_style('core/list', [
+            'name'  => 'arrows',
+            'label' => 'Arrows',
+            'style_handle' => 'aletho-list-styles'
+        ]);
     }
 
     public static function theme_admin_menu_addons()

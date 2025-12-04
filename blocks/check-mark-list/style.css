@@ -1,0 +1,10 @@
+.fancy-list {
+    list-style: none;
+    padding-left: 2rem;
+}
+
+.fancy-list li::before {
+    content: '✨';
+    margin-right: 0.5rem;
+    color: gold;
+}

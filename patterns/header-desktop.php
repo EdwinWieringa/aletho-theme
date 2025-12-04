@@ -5,6 +5,7 @@
  * Categories: header
  */
 ?>
+
 <!-- wp:group {"align":"full","className":"sticky-header","style":{"spacing":{"padding":{"top":"var:preset|spacing|40","bottom":"var:preset|spacing|40"}},"position":{"type":"sticky","top":"0px"}},"backgroundColor":"primary-blue","layout":{"type":"constrained"}} -->
 <div class="wp-block-group alignfull sticky-header has-primary-blue-background-color has-background" id="sticky-header" style="padding-top:var(--wp--preset--spacing--40);padding-bottom:var(--wp--preset--spacing--40)">
     <!-- wp:columns {"isStackedOnMobile":false,"style":{"spacing":{"margin":{"top":"0","bottom":"0"},"padding":{"top":"0","bottom":"0"}}}} -->
@@ -23,7 +24,12 @@
 
         <!-- wp:column {"verticalAlignment":"center"} -->
         <div class="wp-block-column is-vertically-aligned-center">
-            <!-- wp:navigation {"ref":36,"textColor":"white","overlayMenu":"never","icon":"menu","overlayBackgroundColor":"secundary-light-blue","overlayTextColor":"primary-blue","fontSize":"medium","layout":{"type":"flex","flexWrap":"nowrap","justifyContent":"center","orientation":"horizontal"}} /-->
+            <!-- wp:navigation {"textColor":"white","overlayMenu":"never","icon":"menu","overlayBackgroundColor":"secundary-light-blue","overlayTextColor":"primary-blue","fontSize":"medium","layout":{"type":"flex","flexWrap":"nowrap","justifyContent":"center","orientation":"horizontal"}} -->
+                <!-- wp:navigation-link {"label":"Over ons","type":"page","url":"/over-ons"} /-->
+                <!-- wp:navigation-link {"label":"Aanbod","type":"page","url":"/aanbod"} /-->
+                <!-- wp:navigation-link {"label":"Verwijzers","type":"page","url":"/verwijzers"} /-->
+                <!-- wp:navigation-link {"label":"Portfolio","type":"page","url":"/portfolio"} /-->
+            <!-- /wp:navigation -->
         </div>
         <!-- /wp:column -->
 
@@ -54,3 +60,5 @@
     <!-- /wp:columns -->
 </div>
 <!-- /wp:group -->
+
+<!-- wp:pattern {"slug":"aletho/title-banner"} /-->

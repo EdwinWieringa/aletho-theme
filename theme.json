@@ -54,7 +54,9 @@
 			]
 		},
 		"spacing": {
-			"blockGap": false
+			"blockGap": true,
+			"padding": true,
+			"margin": true
 		},
 		"typography": {
 			"customFontSize": false,

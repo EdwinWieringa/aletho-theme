@@ -1,0 +1,16 @@
+{
+	"apiVersion": 2,
+	"name": "aletho/check-mark-list",
+	"title": "Check Mark List",
+	"category": "text",
+	"icon": "list-view",
+	"description": "A custom list block with check mark.",
+	"editorScript": "file:./index.js",
+	"style": "file:./style.css",
+	"attributes": {
+		"items": {
+			"type": "array",
+			"default": [""]
+		}
+	}
+}

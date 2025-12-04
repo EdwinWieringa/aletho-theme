@@ -1,0 +1,19 @@
+/* ✔️ Checkmarks */
+.is-style-checkmarks {
+  list-style-type: none;
+  padding-left: 1.5em;
+}
+.is-style-checkmarks li::before {
+  content: '✔️';
+  margin-right: 0.5em;
+}
+
+/* ➤ Arrows */
+.is-style-arrows {
+  list-style-type: none;
+  padding-left: 1.5em;
+}
+.is-style-arrows li::before {  
+  content: url('../images/vink.svg');
+  margin-right: 0.5em;
+}

@@ -11,5 +11,15 @@ wp.blocks.registerBlockVariation(
             type: "constrained"
         }
     }
-}
-)
+});
+
+wp.blocks.registerBlockVariation('core/image', {
+  name: 'custom-footer-image',
+  title: 'Footer Image',
+  icon: "superhero-alt",
+  attributes: {
+    className: 'custom-footer-image',
+    align: 'center',
+  },
+  icon: 'format-image',
+});
