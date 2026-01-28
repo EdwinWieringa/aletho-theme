@@ -1,0 +1,11 @@
+{
+  "apiVersion": 2,
+  "name": "aletho/hello-block",
+  "title": "Hello Block",
+  "category": "widgets",
+  "icon": "smiley",
+  "description": "A test block.",
+  "editorScript": "file:./editor.js",
+  "style": "file:./style.css",
+  "render": "file:./render.php"
+}

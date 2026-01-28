@@ -1,0 +1,136 @@
+# Copyright (C) 2026 Edwin
+# This file is distributed under the GPLv2 or later.
+msgid ""
+msgstr ""
+"Project-Id-Version: Alétho Theme 1.0.0\n"
+"Report-Msgid-Bugs-To: https://wordpress.org/support/theme/aletho\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"POT-Creation-Date: 2026-01-05T11:26:33+00:00\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"X-Generator: WP-CLI 2.12.0\n"
+"X-Domain: aletho\n"
+
+#. Theme Name of the theme
+#. Description of the theme
+#: style.css
+msgid "Alétho Theme"
+msgstr ""
+
+#. Theme URI of the theme
+#: style.css
+msgid "https://www.aletho.nl"
+msgstr ""
+
+#. Author of the theme
+#: style.css
+msgid "Edwin"
+msgstr ""
+
+#. Author URI of the theme
+#: style.css
+msgid "http://edopinternet.nl"
+msgstr ""
+
+#: functions.php:112
+msgid "Light Blue Button"
+msgstr ""
+
+#: functions.php:121
+msgid "Orange Button"
+msgstr ""
+
+#: functions.php:130
+msgid "Blue Button"
+msgstr ""
+
+#: functions.php:173
+#: functions.php:175
+msgid "Portfolio"
+msgstr ""
+
+#: functions.php:174
+msgid "Project"
+msgstr ""
+
+#: functions.php:176
+msgid "Add New Portfolio"
+msgstr ""
+
+#: functions.php:177
+msgid "Add New Project"
+msgstr ""
+
+#: functions.php:178
+msgid "New Project"
+msgstr ""
+
+#: functions.php:179
+msgid "Edit Project"
+msgstr ""
+
+#: functions.php:180
+msgid "View Project"
+msgstr ""
+
+#: functions.php:181
+msgid "All Projects"
+msgstr ""
+
+#: patterns/c2a-banner.php
+msgctxt "Pattern title"
+msgid "Call To Action"
+msgstr ""
+
+#: patterns/footer-diamond.php
+msgctxt "Pattern title"
+msgid "Footer Diamond"
+msgstr ""
+
+#: patterns/header-desktop.php
+msgctxt "Pattern title"
+msgid "Header Desktop"
+msgstr ""
+
+#: patterns/header-mobile.php
+msgctxt "Pattern title"
+msgid "Header Mobile"
+msgstr ""
+
+#: patterns/title-banner.php
+msgctxt "Pattern title"
+msgid "Title Banner"
+msgstr ""
+
+#: patterns/title-gradient.php
+msgctxt "Pattern title"
+msgid "Gradient Pattern"
+msgstr ""
+
+#: patterns/usp-columns.php
+msgctxt "Pattern title"
+msgid "Column Pair"
+msgstr ""
+
+#: blocks/check-mark-list/block.json
+msgctxt "block title"
+msgid "Check Mark List"
+msgstr ""
+
+#: blocks/check-mark-list/block.json
+msgctxt "block description"
+msgid "A custom list block with check mark."
+msgstr ""
+
+#: blocks/contactform/block.json
+msgctxt "block title"
+msgid "Contact formulier"
+msgstr ""
+
+#: blocks/contactform/block.json
+msgctxt "block description"
+msgid "Contact- en aanmeldformulier Aletho"
+msgstr ""

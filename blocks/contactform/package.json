@@ -1,0 +1,16 @@
+{
+  "name": "contactform",
+  "version": "1.0.0",
+  "description": "Contact- en aanmeldformulier Aletho",
+  "main": "build/index.js",
+  "scripts": {
+    "build": "wp-scripts build",
+    "start": "wp-scripts start",
+    "lint:js": "wp-scripts lint-js",
+    "lint:css": "wp-scripts lint-style"
+  },
+  "devDependencies": {
+    "@wordpress/scripts": "^27.0.0"
+  },
+  "license": "GPL-2.0-or-later"
+}

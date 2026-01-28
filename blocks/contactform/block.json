@@ -1,0 +1,40 @@
+{
+    "apiVersion": 2,
+    "name": "aletho/contactform",
+    "title": "Contact formulier",
+    "category": "widgets",
+    "icon": "forms",
+    "description": "Contact- en aanmeldformulier Aletho",
+    "attributes": {
+        "name": {
+            "type": "string",
+            "default": ""
+        },
+        "email": {
+            "type": "string",
+            "default": ""
+        },
+        "phone": {
+            "type": "string",
+            "default": ""
+        },
+        "reasonForContact": {
+            "type": "string",
+            "default": "infoRequest"
+        },
+        "subject": {
+            "type": "string",
+            "default": ""
+        },
+        "city": {
+            "type": "string",
+            "default": ""
+        },
+        "formContent": {
+            "type": "string",
+            "default": ""
+        }
+    },
+    "editorScript": "file:./build/index.js",
+    "render": "file:./render.php"
+}

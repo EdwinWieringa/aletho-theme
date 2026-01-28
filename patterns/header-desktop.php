@@ -61,4 +61,6 @@
 </div>
 <!-- /wp:group -->
 
-<!-- wp:pattern {"slug":"aletho/title-banner"} /-->
+<?php if ( is_front_page() || is_home() ) : ?>
+    <!-- wp:pattern {"slug":"aletho/title-banner"} /-->
+<?php endif; ?>

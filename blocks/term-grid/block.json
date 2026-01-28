@@ -1,0 +1,12 @@
+{
+  "apiVersion": 2,
+  "name": "aletho/term-grid",
+  "title": "Term Grid",
+  "category": "widgets",
+  "icon": "grid-view",
+  "description": "Displays taxonomy terms with images.",
+  "supports": {
+    "html": false
+  },
+  "render": "file:./render.php"
+}
