@@ -1,1 +1,2 @@
-<?php error_log("DYNAMIC TEST: render.php executed"); return "<div style='background:lime;padding:20px;'>RETURN WORKS</div>";
+<?php error_log("DYNAMIC TEST: render.php executed"); 
+return "<div style='background:lime;padding:20px;'>RETURN WORKS</div>";
