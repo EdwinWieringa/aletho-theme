@@ -11,8 +11,9 @@ class Aletho_Theme
         add_action('wp_enqueue_scripts', [$this, 'enqueue_theme_styles']);
 
 
+        add_action('init', [$this, 'aletho_register_blocks']);
 
-        // add_action('init', [$this, 'aletho_register_blocks']);
+
         add_action('admin_menu', [$this, 'theme_admin_menu_addons']);
         add_action('init', [$this, 'aletho_register_button_styles']);
         add_action('init', [$this, 'aletho_register_list_styles']);
@@ -21,6 +22,9 @@ class Aletho_Theme
 
         add_action('init', [$this, 'aletho_register_portfolio_post_type']);
         add_action('init', [$this, 'aletho_register_category_taxonomy']);
+        
+
+        add_filter('the_content', function($content) { error_log("CONTENT BEFORE OUTPUT: " . $content); return $content; }, 1);
 
         add_filter('manage_portfolio_posts_columns', function ($columns) {
             $new = [];
@@ -79,24 +83,24 @@ class Aletho_Theme
         add_action('edited_category', [$this, 'aletho_taxonomy_save_term_fields']);
         add_action('admin_footer', [$this, 'aletho_taxonomy_term_image_js']);
         add_action('admin_enqueue_scripts', [$this, 'aletho_taxonomy_enqueue_media']);
-        add_action('init', function () {
+        // add_action('init', function () {
 
-            // Register editor script manually
-            wp_register_script(
-                'hello-block-editor',
-                get_template_directory_uri() . '/blocks/hello-block/editor.js',
-                ['wp-blocks', 'wp-element', 'wp-editor'],
-                filemtime(get_template_directory() . '/blocks/hello-block/editor.js')
-            );
+        //     // Register editor script manually
+        //     wp_register_script(
+        //         'hello-block-editor',
+        //         get_template_directory_uri() . '/blocks/hello-block/editor.js',
+        //         ['wp-blocks', 'wp-element', 'wp-editor'],
+        //         filemtime(get_template_directory() . '/blocks/hello-block/editor.js')
+        //     );
 
-            // Register block.json and attach script
-            register_block_type(
-                __DIR__ . '/blocks/hello-block/block.json',
-                [
-                    'editor_script' => 'hello-block-editor'
-                ]
-            );
-        });
+        //     // Register block.json and attach script
+        //     register_block_type(
+        //         __DIR__ . '/blocks/hello-block/block.json',
+        //         [
+        //             'editor_script' => 'hello-block-editor'
+        //         ]
+        //     );
+        // });
 
         // Sticky header assets
         add_action('enqueue_block_editor_assets', [$this, 'aletho_callback_function']);
@@ -112,10 +116,10 @@ class Aletho_Theme
         wp_enqueue_style('dashicons');
     }
 
-    public static function aletho_register_blocks()
+    public function aletho_register_blocks()
     {
         register_block_type(get_template_directory() . '/blocks/contactform/block.json');
-        register_block_type(__DIR__ . '/blocks/category-grid');
+        register_block_type( get_template_directory() . '/blocks/my-dynamic-block' );
     }
 
     function aletho_enqueue_hover_script()
