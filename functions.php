@@ -118,8 +118,7 @@ class Aletho_Theme
 
     public function aletho_register_blocks()
     {
-        register_block_type(get_template_directory() . '/blocks/contactform/block.json');
-        register_block_type( get_template_directory() . '/blocks/my-dynamic-block' );
+        register_block_type(get_template_directory() . '/blocks/contactform/block.json');        
     }
 
     function aletho_enqueue_hover_script()
