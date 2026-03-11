@@ -8,103 +8,49 @@ class Aletho_Theme
 
     private function __construct()
     {
+        include_once get_template_directory() . '/includes/portfolio.php';
+
         add_action('wp_enqueue_scripts', [$this, 'enqueue_theme_styles']);
+        add_action('admin_menu', [$this, 'aletho_admin_menu_addons']);
 
-
-        add_action('init', [$this, 'aletho_register_blocks']);
-
-
-        add_action('admin_menu', [$this, 'theme_admin_menu_addons']);
         add_action('init', [$this, 'aletho_register_button_styles']);
         add_action('init', [$this, 'aletho_register_list_styles']);
+
         add_action('enqueue_block_assets', [$this, 'aletho_enqueue_block_styles']);
         add_action('wp_enqueue_scripts', [$this, 'aletho_enqueue_hover_script']);
 
-        add_action('init', [$this, 'aletho_register_portfolio_post_type']);
-        add_action('init', [$this, 'aletho_register_category_taxonomy']);
-        
-
-        add_filter('the_content', function($content) { error_log("CONTENT BEFORE OUTPUT: " . $content); return $content; }, 1);
-
-        add_filter('manage_portfolio_posts_columns', function ($columns) {
-            $new = [];
-            foreach ($columns as $key => $label) {
-                $new[$key] = $label;
-                if ($key === 'title') {
-                    $new['category'] = 'Category';
-                }
-            }
-            return $new;
-        });
-
-        add_action('manage_portfolio_posts_custom_column', function ($column, $post_id) {
-            if ($column === 'category') {
-                $terms = get_the_terms($post_id, 'category');
-                if (!empty($terms) && !is_wp_error($terms)) {
-                    echo join(', ', wp_list_pluck($terms, 'name'));
-                } else {
-                    echo '<span style="color:#999;">—</span>';
-                }
-            }
-        }, 10, 2);
-
-        add_filter('manage_edit-portfolio_sortable_columns', function ($columns) {
-            $columns['category'] = 'category';
-            return $columns;
-        });
-
-        add_filter('manage_portfolio_posts_columns', function ($columns) {
-            $new = [];
-            $new['thumbnail'] = 'Thumbnail';
-            foreach ($columns as $key => $label) {
-                $new[$key] = $label;
-            }
-            return $new;
-        });
-
-        add_action('manage_portfolio_posts_custom_column', function ($column, $post_id) {
-            if ($column === 'thumbnail') {
-                $thumb = get_the_post_thumbnail($post_id, 'thumbnail');
-                if ($thumb) {
-                    echo $thumb;
-                } else {
-                    echo '<span style="color:#999;">—</span>';
-                }
-            }
-        }, 10, 2);
-
-        add_action('admin_head', function () {
-            echo '<style> .column-thumbnail { width: 80px; } .column-thumbnail img { width: 60px; height: auto; } </style>';
-        });
-
-        add_action('category_add_form_fields', [$this, 'aletho_taxonomy_add_term_fields']);
-        add_action('category_edit_form_fields', [$this, 'aletho_taxonomy_edit_term_fields']);
-        add_action('created_category', [$this, 'aletho_taxonomy_save_term_fields']);
-        add_action('edited_category', [$this, 'aletho_taxonomy_save_term_fields']);
+        add_action('projects_category_add_form_fields', [$this, 'aletho_taxonomy_add_term_fields']);
+        add_action('projects_category_edit_form_fields', [$this, 'aletho_taxonomy_edit_term_fields']);
+        add_action('created_projects_category', [$this, 'aletho_taxonomy_save_term_fields']);
+        add_action('edited_projects_category', [$this, 'aletho_taxonomy_save_term_fields']);
         add_action('admin_footer', [$this, 'aletho_taxonomy_term_image_js']);
         add_action('admin_enqueue_scripts', [$this, 'aletho_taxonomy_enqueue_media']);
-        // add_action('init', function () {
 
-        //     // Register editor script manually
-        //     wp_register_script(
-        //         'hello-block-editor',
-        //         get_template_directory_uri() . '/blocks/hello-block/editor.js',
-        //         ['wp-blocks', 'wp-element', 'wp-editor'],
-        //         filemtime(get_template_directory() . '/blocks/hello-block/editor.js')
-        //     );
-
-        //     // Register block.json and attach script
-        //     register_block_type(
-        //         __DIR__ . '/blocks/hello-block/block.json',
-        //         [
-        //             'editor_script' => 'hello-block-editor'
-        //         ]
-        //     );
-        // });
 
         // Sticky header assets
-        add_action('enqueue_block_editor_assets', [$this, 'aletho_callback_function']);
+        add_action('enqueue_block_editor_assets', [$this, 'aletho_block_editor_assets']);
         add_action('enqueue_block_assets', [$this, 'aletho_js_frontend_backend_enqueue']);
+
+        add_filter('pre_render_block', function ($content, $block) {
+
+            if (
+                $block['blockName'] === 'core/query' &&
+                !empty($block['attrs']['myFilter']) &&
+                $block['attrs']['myFilter'] === 'projects-game-dev'
+            ) {
+
+                $block['attrs']['query']['taxQuery'] = [
+                    [
+                        'taxonomy' => 'projects_category',
+                        'field'    => 'slug',
+                        'terms'    => ['game-development'],
+                    ]
+                ];
+            }
+            error_log(print_r($block, true));
+
+            return $content;
+        }, 10, 2);
     }
 
     public static function enqueue_theme_styles()
@@ -114,11 +60,6 @@ class Aletho_Theme
 
         // Enqueue Dashicons for frontend use
         wp_enqueue_style('dashicons');
-    }
-
-    public function aletho_register_blocks()
-    {
-        register_block_type(get_template_directory() . '/blocks/contactform/block.json');        
     }
 
     function aletho_enqueue_hover_script()
@@ -196,7 +137,7 @@ class Aletho_Theme
         ]);
     }
 
-    public static function theme_admin_menu_addons()
+    public static function aletho_admin_menu_addons()
     {
         add_menu_page(
             __('Aletho Theme Documentation'),
@@ -212,49 +153,6 @@ class Aletho_Theme
     public function theme_documentation_page()
     {
         esc_html_e('Welcome to my custom admin page.');
-    }
-
-    public static function aletho_register_portfolio_post_type()
-    {
-        $args = array(
-            'labels' => array(
-                'name' => __('Portfolio', 'aletho'),
-                'singular_name' => __('Project', 'aletho'),
-                'menu_name' => __('Portfolio', 'aletho'),
-                'add_new' => __('Add New Portfolio', 'aletho'),
-                'add_new_item' => __('Add New Project', 'aletho'),
-                'new_item' => __('New Project', 'aletho'),
-                'edit_item' => __('Edit Project', 'aletho'),
-                'view_item' => __('View Project', 'aletho'),
-                'all_items' => __('All Projects', 'aletho'),
-            ),
-            'public' => true,
-            'has_archive' => true,
-            'show_in_rest' => true,
-            'supports' => array('title', 'editor', 'author', 'thumbnail', 'excerpt', 'page-attributes'),
-        );
-
-        register_post_type('portfolio', $args);
-    }
-
-    public static function aletho_register_category_taxonomy()
-    {
-        $args = array(
-            'labels'       => array(
-                'name'          => __('Category', 'aletho'),
-                'singular_name' => __('Category', 'aletho'),
-                'edit_item'     => __('Edit Category', 'aletho'),
-                'update_item'   => __('Update Category', 'aletho'),
-                'add_new_item'  => __('Add New Category', 'aletho'),
-                'new_item_name' => __('New Category Name', 'aletho'),
-                'menu_name'     => __('Category', 'aletho'),
-            ),
-            'hierarchical' => true,
-            'rewrite'      => array('slug' => 'portfolio-category'),
-            'show_in_rest' => true,
-        );
-
-        register_taxonomy('portfolio_category', 'portfolio', $args);
     }
 
     // Add image field to Add New Term screen
@@ -339,13 +237,14 @@ class Aletho_Theme
         }
     }
 
-    public static function aletho_callback_function()
+    public static function aletho_block_editor_assets()
     {
         wp_enqueue_script(
-            'theme-callback-block-variation',
-            ALETHO_THEME_DIR_URI . '/assets/js/block-variations.js',
-            array('wp-blocks', 'wp-dom-ready'),
-            wp_get_theme()->get('Version')
+            'aletho-block-style-icons',
+            get_template_directory_uri() . '/assets/js/block-styles.js',
+            array('wp-blocks', 'wp-dom-ready', 'wp-edit-post'),
+            filemtime(get_template_directory() . '/assets/js/block-styles.js'),
+            true
         );
     }
 

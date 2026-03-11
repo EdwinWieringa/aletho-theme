@@ -3,6 +3,9 @@
 	"version": 3,
 	"settings": {
 		"appearanceTools": true,
+		"core": {
+			"patterns": false
+		},
 		"layout": {
 			"contentSize": "66rem",
 			"wideSize": "72rem"
