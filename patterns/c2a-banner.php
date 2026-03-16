@@ -6,10 +6,12 @@
  */
 ?>
 
-<!-- wp:group {"style":{"spacing":{"margin":{"top":"0","bottom":"0"},"padding":{"top":"var:preset|spacing|80","bottom":"var:preset|spacing|80"}}},"gradient":"aletho-light-blue-gradient","layout":{"type":"constrained"}} -->
-<div class="wp-block-group has-aletho-light-blue-gradient-gradient-background has-background" style="margin-top:0;margin-bottom:0;padding-top:var(--wp--preset--spacing--80);padding-bottom:var(--wp--preset--spacing--80)">
-    <!-- wp:group {"style":{"spacing":{"margin":{"top":"0","bottom":"0"}}},"layout":{"type":"constrained","justifyContent":"left","contentSize":"39em"}} -->
-    <div class="wp-block-group" style="margin-top:0;margin-bottom:0">
+<!-- wp:group {"align":"full","gradient":"aletho-light-blue-gradient","style":{"spacing":{"padding":{"top":"var:preset|spacing|80","bottom":"var:preset|spacing|80"}}}} -->
+<div class="wp-block-group alignfull has-aletho-light-blue-gradient-gradient-background has-background" style="padding-top:var(--wp--preset--spacing--80);padding-bottom:var(--wp--preset--spacing--80)">
+    
+    <!-- wp:group {"layout":{"type":"constrained","contentSize":"39em"}} -->
+    <div class="wp-block-group">
+
         <!-- wp:heading {"style":{"elements":{"link":{"color":{"text":"var:preset|color|primary-blue"}}}},"textColor":"primary-blue","fontSize":"x-large"} -->
         <h2 class="wp-block-heading has-primary-blue-color has-text-color has-link-color has-x-large-font-size"><?php esc_html_e("Ben je geïnteresseerd?"); ?></h2>
         <!-- /wp:heading -->
@@ -29,13 +31,15 @@
             <!-- wp:button {"className":"is-style-orange"} -->
             <div class="wp-block-button is-style-orange">
                 <a class="wp-block-button__link wp-element-button">
-                    <strong>Contact</strong>
+                    <strong><?php esc_html_e("Contact"); ?></strong>
                 </a>
             </div>
             <!-- /wp:button -->
         </div>
         <!-- /wp:buttons -->
+
     </div>
     <!-- /wp:group -->
+
 </div>
 <!-- /wp:group -->

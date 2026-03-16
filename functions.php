@@ -30,27 +30,6 @@ class Aletho_Theme
         // Sticky header assets
         add_action('enqueue_block_editor_assets', [$this, 'aletho_block_editor_assets']);
         add_action('enqueue_block_assets', [$this, 'aletho_js_frontend_backend_enqueue']);
-
-        add_filter('pre_render_block', function ($content, $block) {
-
-            if (
-                $block['blockName'] === 'core/query' &&
-                !empty($block['attrs']['myFilter']) &&
-                $block['attrs']['myFilter'] === 'projects-game-dev'
-            ) {
-
-                $block['attrs']['query']['taxQuery'] = [
-                    [
-                        'taxonomy' => 'projects_category',
-                        'field'    => 'slug',
-                        'terms'    => ['game-development'],
-                    ]
-                ];
-            }
-            error_log(print_r($block, true));
-
-            return $content;
-        }, 10, 2);
     }
 
     public static function enqueue_theme_styles()
