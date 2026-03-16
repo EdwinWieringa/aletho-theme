@@ -38,16 +38,16 @@
             <!-- wp:buttons {"layout":{"type":"flex","flexWrap":"nowrap","justifyContent":"right"}} -->
             <div class="wp-block-buttons">
                 <!-- wp:button {"className":"is-style-light-blue"} -->
-                <div class="wp-block-button is-style-light-blue">                
-                    <a class="wp-block-button__link wp-element-button">
+                <div class="wp-block-button is-style-light-blue">
+                    <a class="wp-block-button__link wp-element-button" href="/aanmelden">
                         <strong>Aanmelden</strong>
                     </a>
                 </div>
                 <!-- /wp:button -->
-                
+
                 <!-- wp:button {"className":"is-style-orange"} -->
                 <div class="wp-block-button is-style-orange">
-                    <a class="wp-block-button__link wp-element-button">
+                    <a class="wp-block-button__link wp-element-button" href="/contact">
                         <strong>Contact</strong>
                     </a>
                 </div>
