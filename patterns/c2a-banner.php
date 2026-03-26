@@ -6,18 +6,19 @@
  */
 ?>
 
-<!-- wp:group {"align":"full","gradient":"aletho-light-blue-gradient","style":{"spacing":{"padding":{"top":"var:preset|spacing|80","bottom":"var:preset|spacing|80"}}}} -->
+<!-- wp:group {"align":"full","style":{"spacing":{"padding":{"top":"var:preset|spacing|80","bottom":"var:preset|spacing|80"}}},"gradient":"aletho-light-blue-gradient","layout":{"type":"constrained"}} -->
 <div class="wp-block-group alignfull has-aletho-light-blue-gradient-gradient-background has-background" style="padding-top:var(--wp--preset--spacing--80);padding-bottom:var(--wp--preset--spacing--80)">
-    
-    <!-- wp:group {"layout":{"type":"constrained","contentSize":"39em"}} -->
+
+
+    <!-- wp:group {"layout":{"type":"default"}} -->
     <div class="wp-block-group">
 
         <!-- wp:heading {"style":{"elements":{"link":{"color":{"text":"var:preset|color|primary-blue"}}}},"textColor":"primary-blue","fontSize":"x-large"} -->
         <h2 class="wp-block-heading has-primary-blue-color has-text-color has-link-color has-x-large-font-size"><?php esc_html_e("Ben je geïnteresseerd?"); ?></h2>
         <!-- /wp:heading -->
 
-        <!-- wp:paragraph {"fontSize":"medium"} -->
-        <p class="has-medium-font-size"><?php esc_html_e("Bij interesse kan je contact opnemen voor het plannen van een rondleiding zodat je een beter beeld krijgt van wat Alétho voor je kan doen. We hebben locaties in Assen en in Groningen."); ?></p>
+        <!-- wp:paragraph {"style":{"spacing":{"margin":{"right":"14em"}}},"fontSize":"medium"} -->
+        <p class="has-medium-font-size" style="margin-right:14em">Bij interesse kan je contact opnemen voor het plannen van een rondleiding zodat je een beter beeld krijgt van wat Alétho voor je kan doen. We hebben locaties in Assen en in Groningen.</p>
         <!-- /wp:paragraph -->
 
         <!-- wp:buttons -->
