@@ -1,0 +1,66 @@
+div.wpforms-container-full.aletho-contact-form .wpforms-field-label {
+	color: var(--wp--preset--color--primary-blue);
+	font-family: var(--wp--preset--font-family--quicksand);
+	font-size: 25px;
+	font-weight: normal;
+}
+
+div.wpforms-container-full.aletho-contact-form input.wpforms-field-medium,
+div.wpforms-container-full.aletho-contact-form input.wpforms-field-large {
+	background-color: var(--wp--preset--color--secundary-pale-blue);
+	border: 0;
+	border-radius: 15px;
+}
+
+div.wpforms-container-full.aletho-contact-form
+	.wpforms-form
+	textarea.wpforms-field-large {
+	background-color: var(--wp--preset--color--secundary-pale-blue);
+	border: 0;
+	border-radius: 15px;
+}
+
+div.wpforms-container-full.aletho-contact-form input[type="radio"]::before {
+	border: 2px solid var(--wp--preset--color--primary-orange);
+}
+
+div.wpforms-container-full.aletho-contact-form
+	input[type="radio"]:checked::before {
+	border-color: var(--wp--preset--color--primary-orange);
+	box-shadow:
+		0 0 0 1px var(--wp--preset--color--primary-orange),
+		0px 1px 2px rgba(0, 0, 0, 0.15);
+}
+
+div.wpforms-container-full.aletho-contact-form
+	input[type="radio"]:checked::after {
+	background-color: var(--wp--preset--color--primary-orange);
+	transform: scale(0.75);
+	-moz-transform: scale(0.75);
+	left: -1px;
+	top: -1px;
+}
+
+div.wpforms-container-full.aletho-contact-form
+	.wpforms-field.wpforms-field-radio
+	ul {
+	gap: 8px;
+}
+
+div.wpforms-container-full.aletho-contact-form
+	.wpforms-field.wpforms-field-radio
+	ul
+	li
+	input {
+	margin-top: 5px;
+}
+
+div.wpforms-container-full.aletho-contact-form
+	.wpforms-field.wpforms-field-radio
+	ul
+	li
+	input
+	+ label {
+	font-size: 1.25rem;
+    color: var(--wp--preset--color--primary-blue);
+}

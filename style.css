@@ -225,3 +225,8 @@ footer a {
 footer a:hover {
 	color: var(--wp--preset--color--primary-orange);
 }
+
+.contact-info-block {
+	position: sticky;
+	top: 110px;
+}
