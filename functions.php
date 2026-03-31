@@ -8,7 +8,7 @@ class Aletho_Theme
 
     private function __construct()
     {
-        include_once get_template_directory() . '/includes/portfolio.php';
+        include_once ALETHO_THEME_DIR . '/includes/portfolio.php';
 
         add_action('wp_enqueue_scripts', [$this, 'enqueue_theme_styles']);
         add_action('admin_menu', [$this, 'aletho_admin_menu_addons']);
@@ -26,7 +26,6 @@ class Aletho_Theme
         add_action('admin_footer', [$this, 'aletho_taxonomy_term_image_js']);
         add_action('admin_enqueue_scripts', [$this, 'aletho_taxonomy_enqueue_media']);
 
-
         // Sticky header assets
         add_action('enqueue_block_editor_assets', [$this, 'aletho_block_editor_assets']);
         add_action('enqueue_block_assets', [$this, 'aletho_js_frontend_backend_enqueue']);
@@ -37,11 +36,23 @@ class Aletho_Theme
         // Enqueue main theme stylesheet
         wp_enqueue_style('aletho-theme-style', get_stylesheet_uri());
 
+        // WPForms overrides
+        $deps = [];
+        if (wp_style_is('wpforms-modern-full', 'registered')) {
+            $deps[] = 'wpforms-modern-full';
+        }
+        wp_enqueue_style(
+            'aletho-wpforms',
+            get_template_directory_uri() . '/assets/css/wpforms.css',
+            $deps,
+            filemtime(get_template_directory() . '/assets/css/wpforms.css')
+        );
+
         // Enqueue Dashicons for frontend use
         wp_enqueue_style('dashicons');
     }
 
-    function aletho_enqueue_hover_script()
+    public function aletho_enqueue_hover_script()
     {
         wp_enqueue_script(
             'aletho-button-hover',
@@ -71,7 +82,7 @@ class Aletho_Theme
 
     // Register custom styles for core/button block: Light Blue, Orange, and Blue.
     // Styles use 'aletho-block-styles' handle and must be hooked into 'init'.
-    function aletho_register_button_styles()
+    public function aletho_register_button_styles()
     {
         register_block_style(
             'core/button',
@@ -101,7 +112,7 @@ class Aletho_Theme
         );
     }
 
-    function aletho_register_list_styles()
+    public function aletho_register_list_styles()
     {
         register_block_style('core/list', [
             'name'  => 'checkmarks',
@@ -116,14 +127,14 @@ class Aletho_Theme
         ]);
     }
 
-    public static function aletho_admin_menu_addons()
+    public function aletho_admin_menu_addons()
     {
         add_menu_page(
             __('Aletho Theme Documentation'),
             __('Theme Documentation'),
             'manage_options',
             'theme-documentation',
-            'theme_documentation_page',
+            [$this, 'theme_documentation_page'],
             'dashicons-book',
             10
         );
@@ -167,7 +178,7 @@ class Aletho_Theme
     <?php
     }
 
-    function aletho_taxonomy_term_image_js()
+    public function aletho_taxonomy_term_image_js()
     {
     ?>
         <script>

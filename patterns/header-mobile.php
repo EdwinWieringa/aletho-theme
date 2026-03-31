@@ -15,8 +15,8 @@
         <!-- wp:navigation-link {"label":"Aanbod","type":"page","url":"/aanbod"} /-->
         <!-- wp:navigation-link {"label":"Verwijzers","type":"page","url":"/verwijzers"} /-->
         <!-- wp:navigation-link {"label":"Portfolio","type":"page","url":"/portfolio"} /-->
-        <!-- wp:navigation-link {"label":"Aanmelden","type":"page","url":"/it-trajecten"} /-->
-        <!-- wp:navigation-link {"label":"Contact","type":"page","url":"/it-trajecten"} /-->
+        <!-- wp:navigation-link {"label":"Aanmelden","type":"page","url":"/aanmelden"} /-->
+        <!-- wp:navigation-link {"label":"Contact","type":"page","url":"/contact"} /-->
     <!-- /wp:navigation -->
 
     <!-- wp:image  -->
