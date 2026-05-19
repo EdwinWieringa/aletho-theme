@@ -64,3 +64,9 @@ div.wpforms-container-full.aletho-contact-form
 	font-size: 1.25rem;
     color: var(--wp--preset--color--primary-blue);
 }
+
+div.wpforms-container-full.aletho-contact-form .wpforms-confirmation-container-full {
+	background-color: var(--wp--preset--color--secundary-pale-blue);
+  	border-radius: 25px;
+  	border: 1px solid var(--wp--preset--color--primary-blue);
+}

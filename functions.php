@@ -29,6 +29,9 @@ class Aletho_Theme
         // Sticky header assets
         add_action('enqueue_block_editor_assets', [$this, 'aletho_block_editor_assets']);
         add_action('enqueue_block_assets', [$this, 'aletho_js_frontend_backend_enqueue']);
+
+        add_action('init', [$this, 'aletho_register_pattern_categories']);
+        add_action('init', [$this, 'aletho_register_icon_variations']);
     }
 
     public static function enqueue_theme_styles()
@@ -36,7 +39,6 @@ class Aletho_Theme
         // Enqueue main theme stylesheet
         wp_enqueue_style('aletho-theme-style', get_stylesheet_uri());
 
-        // WPForms overrides
         $deps = [];
         if (wp_style_is('wpforms-modern-full', 'registered')) {
             $deps[] = 'wpforms-modern-full';
@@ -238,6 +240,15 @@ class Aletho_Theme
         );
     }
 
+    public function aletho_register_icon_variations()
+    {
+        wp_enqueue_script(
+            'aletho-icon-variations',
+            get_template_directory_uri() . '/blocks/icons/icons.js',
+            ['wp-blocks']
+        );
+    }
+
     public static function aletho_js_frontend_backend_enqueue()
     {
         wp_enqueue_script(
@@ -246,6 +257,15 @@ class Aletho_Theme
             array('wp-dom-ready'),
             filemtime(ALETHO_THEME_DIR . '/assets/js/group-navigation-script.js'),
             true
+        );
+    }
+
+    // Register custom pattern categories     
+    public function aletho_register_pattern_categories()
+    {
+        register_block_pattern_category(
+            'icons',
+            ['label' => __('Icons', 'aletho')]
         );
     }
 

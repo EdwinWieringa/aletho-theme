@@ -96,10 +96,17 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
 	.wp-block-group h1,
 	.wp-block-group h2,
 	.wp-block-group h3,
-	.wp-block-group ul,
 	.cta-section .wp-block-buttons,
 	.wp-block-group p {
 		padding-inline: 1.5rem;
+	}
+	
+	.wp-block-column > .wp-block-group ul {
+		padding-inline: 1.5rem;
+	}
+
+	.wp-block-group > .wp-block-group > ul {
+		/* padding-inline: 0; */
 	}
 
 	body .wp-block-columns {
@@ -182,6 +189,7 @@ footer {
 	bottom: 40px;
 	right: 0;
 	object-position: 270px 0px;
+	z-index: 99;
 }
 
 /* Sticky header block */
