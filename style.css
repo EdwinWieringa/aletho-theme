@@ -238,3 +238,122 @@ footer a:hover {
 	position: sticky;
 	top: 110px;
 }
+
+.aanbod-menu .wp-block-buttons {
+	flex: 1;
+}
+
+
+
+/* Pixel-perfect clone of wp-block-post-template grid */
+.portfolio-overview-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--wp--preset--spacing--40);
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+/* Match block theme responsive behavior */
+@media (max-width: 900px) {
+    .portfolio-overview-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 600px) {
+    .portfolio-overview-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Outer card */
+.aletho-card {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+/* Top section */
+.aletho-card-top {
+    background: var(--wp--preset--color--primary-blue);
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+    min-height: 230px;
+    padding: var(--wp--preset--spacing--30);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Image wrapper */
+.aletho-card-image img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    object-fit: cover;
+}
+
+/* Bottom section */
+.aletho-card-bottom {
+    background: var(--wp--preset--color--secundary-pale-blue);
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+    min-height: 14em;
+    padding: var(--wp--preset--spacing--50);
+    display: flex;
+    flex-direction: column;
+    gap: var(--wp--preset--spacing--20);
+}
+
+/* Title */
+.aletho-card-title {
+    margin: 0;
+    font-size: var(--wp--preset--font-size--large);
+    color: var(--wp--preset--color--primary-blue);
+}
+
+.aletho-card-title a {
+    color: inherit;
+    text-decoration: none;
+}
+
+/* Excerpt */
+.aletho-card-excerpt {
+    font-size: var(--wp--preset--font-size--small);
+    margin: 0;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* 
+.portfolio-overview-grid li {
+	margin: 0;
+}
+
+.portfolio-overview-grid figure {
+	margin: 0;
+	position: relative;
+}
+
+.portfolio-overview-grid a {
+	color: var(--wp--preset--color--primary-blue);
+	text-decoration: none;
+	display: block;
+	height: 100%;
+} */
