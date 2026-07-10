@@ -19,19 +19,14 @@ class Aletho_Theme
         add_action('enqueue_block_assets', [$this, 'aletho_enqueue_block_styles']);
         add_action('wp_enqueue_scripts', [$this, 'aletho_enqueue_hover_script']);
 
-        add_action('projects_category_add_form_fields', [$this, 'aletho_taxonomy_add_term_fields']);
-        add_action('projects_category_edit_form_fields', [$this, 'aletho_taxonomy_edit_term_fields']);
-        add_action('created_projects_category', [$this, 'aletho_taxonomy_save_term_fields']);
-        add_action('edited_projects_category', [$this, 'aletho_taxonomy_save_term_fields']);
-        add_action('admin_footer', [$this, 'aletho_taxonomy_term_image_js']);
-        add_action('admin_enqueue_scripts', [$this, 'aletho_taxonomy_enqueue_media']);
-
         // Sticky header assets
         add_action('enqueue_block_editor_assets', [$this, 'aletho_block_editor_assets']);
         add_action('enqueue_block_assets', [$this, 'aletho_js_frontend_backend_enqueue']);
 
         add_action('init', [$this, 'aletho_register_pattern_categories']);
         add_action('init', [$this, 'aletho_register_icon_variations']);
+
+        add_action('init', [$this, 'aletho_register_blocks']);
     }
 
     public static function enqueue_theme_styles()
@@ -147,88 +142,6 @@ class Aletho_Theme
         esc_html_e('Welcome to my custom admin page.');
     }
 
-    // Add image field to Add New Term screen
-    public static function aletho_taxonomy_add_term_fields()
-    {
-?>
-        <div class="form-field term-image-wrap">
-            <label for="term_image">Image</label>
-            <input type="hidden" name="term_image" id="term_image" value="" />
-            <div id="term-image-preview" style="margin-bottom:10px;"></div>
-            <button type="button" class="button" id="term-image-upload">Select Image</button>
-        </div>
-    <?php
-    }
-
-    // Add image field to Edit Term screen
-    public static function aletho_taxonomy_edit_term_fields($term)
-    {
-        $image_id = get_term_meta($term->term_id, 'term_image', true);
-    ?>
-        <tr class="form-field term-image-wrap">
-            <th scope="row"><label for="term_image">Image</label></th>
-            <td>
-                <input type="hidden" name="term_image" id="term_image" value="<?php echo esc_attr($image_id); ?>" />
-                <div id="term-image-preview" style="margin-bottom:10px;">
-                    <?php if ($image_id) : ?>
-                        <?php echo wp_get_attachment_image($image_id, 'thumbnail'); ?>
-                    <?php endif; ?>
-                </div>
-                <button type="button" class="button" id="term-image-upload">Select Image</button>
-            </td>
-        </tr>
-    <?php
-    }
-
-    public function aletho_taxonomy_term_image_js()
-    {
-    ?>
-        <script>
-            jQuery(document).ready(function($) {
-                var frame;
-                $('#term-image-upload').on('click', function(e) {
-                    e.preventDefault();
-                    if (frame) {
-                        frame.open();
-                        return;
-                    }
-
-                    frame = wp.media({
-                        title: 'Select or Upload Image',
-                        button: {
-                            text: 'Use this image'
-                        },
-                        multiple: false
-                    });
-
-                    frame.on('select', function() {
-                        var attachment = frame.state().get('selection').first().toJSON();
-                        $('#term_image').val(attachment.id);
-                        $('#term-image-preview').html('<img src="' + attachment.sizes.thumbnail.url + '" />');
-                    });
-
-                    frame.open();
-                });
-            });
-        </script>
-<?php
-    }
-
-    public static function aletho_taxonomy_enqueue_media()
-    {
-        // Only load on term add/edit screens
-        if (isset($_GET['taxonomy'])) {
-            wp_enqueue_media();
-        }
-    }
-
-    public static function aletho_taxonomy_save_term_fields($term_id)
-    {
-        if (isset($_POST['term_image'])) {
-            update_term_meta($term_id, 'term_image', sanitize_text_field($_POST['term_image']));
-        }
-    }
-
     public static function aletho_block_editor_assets()
     {
         wp_enqueue_script(
@@ -260,12 +173,20 @@ class Aletho_Theme
         );
     }
 
-    // Register custom pattern categories     
+    // Register custom pattern categories
     public function aletho_register_pattern_categories()
     {
         register_block_pattern_category(
             'icons',
             ['label' => __('Icons', 'aletho')]
+        );
+    }
+
+    // Register dynamic blocks used by the theme
+    public function aletho_register_blocks()
+    {
+        register_block_type(
+            get_template_directory() . '/blocks/portfolio-breadcrumbs'
         );
     }
 

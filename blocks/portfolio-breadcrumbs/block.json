@@ -1,0 +1,13 @@
+{
+    "apiVersion": 2,
+    "name": "aletho/portfolio-breadcrumbs",
+    "title": "Portfolio Breadcrumbs",
+    "category": "theme",
+    "icon": "menu",
+    "description": "Hierarchical breadcrumbs for portfolio taxonomy.",
+    "supports": {
+        "html": false
+    },
+    "editorScript": "file:editor.js",
+    "render": "file:render.php"
+}
