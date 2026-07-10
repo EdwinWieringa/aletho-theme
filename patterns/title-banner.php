@@ -1,8 +1,9 @@
 <?php
+
 /**
  * Title: Title Banner
  * Slug: aletho/title-banner
- * Categories: features
+ * Categories: aletho
  */
 ?>
 

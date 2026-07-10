@@ -2,7 +2,7 @@
 /**
  * Title: Header Desktop
  * Slug: aletho/header-desktop
- * Categories: header
+ * Categories: aletho
  */
 ?>
 

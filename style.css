@@ -43,6 +43,12 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
 	.wp-block-columns {
 		flex-wrap: nowrap !important;
 	}
+
+	.wp-block-navigation .wp-block-navigation-item__label {
+		overflow-wrap: normal;
+		word-break: normal;
+		white-space: normal;
+	}
 }
 
 /* For mobile screens */
@@ -105,10 +111,6 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
 		padding-inline: 1.5rem;
 	}
 
-	.wp-block-group > .wp-block-group > ul {
-		/* padding-inline: 0; */
-	}
-
 	body .wp-block-columns {
 		flex-wrap: wrap !important;
 	}
@@ -116,6 +118,16 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
 	body .wp-block-column {
 		flex-basis: 100% !important;
 		max-width: 100% !important;
+	}
+
+	.wp-block-breadcrumbs,
+	.portfolio-breadcrumbs {
+		padding-inline: 1.5rem;
+	}
+
+	.projects-taxonomy-list .portfolio-overview-grid,
+	.portfolio-grid .wp-block-post-template {
+		padding-inline: 1.5rem;
 	}
 }
 
@@ -243,94 +255,94 @@ footer a:hover {
 	flex: 1;
 }
 
-
-
 /* Pixel-perfect clone of wp-block-post-template grid */
 .portfolio-overview-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: var(--wp--preset--spacing--40);
-    list-style: none;
-    padding: 0;
-    margin: 0;
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+	gap: var(--wp--preset--spacing--40);
+	list-style: none;
+	padding: 0;
+	margin: 0;
 }
 
 /* Match block theme responsive behavior */
 @media (max-width: 900px) {
-    .portfolio-overview-grid {
-        grid-template-columns: repeat(2, 1fr);
-    }
+	.portfolio-overview-grid,
+	.portfolio-grid .wp-block-post-template {
+		grid-template-columns: repeat(2, 1fr);
+	}
 }
 
 @media (max-width: 600px) {
-    .portfolio-overview-grid {
-        grid-template-columns: 1fr;
-    }
+	.portfolio-overview-grid,
+	.portfolio-grid .wp-block-post-template {
+		grid-template-columns: 1fr;
+	}
 }
 
 /* Outer card */
 .portfolio-tax-card {
-    list-style: none;
-    margin: 0;
-    padding: 0;
+	list-style: none;
+	margin: 0;
+	padding: 0;
 }
 
 /* Top section */
 .portfolio-tax-card-top {
-    background: var(--wp--preset--color--primary-blue);
-    border-top-left-radius: 20px;
-    border-top-right-radius: 20px;
-    min-height: 230px;
-    padding: var(--wp--preset--spacing--30);
-    display: flex;
-    align-items: center;
-    justify-content: center;
+	background: var(--wp--preset--color--primary-blue);
+	border-top-left-radius: 20px;
+	border-top-right-radius: 20px;
+	min-height: 230px;
+	padding: var(--wp--preset--spacing--30);
+	display: flex;
+	align-items: center;
+	justify-content: center;
 }
 
 .portfolio-tax-card-image {
-    height: 200px;
-    overflow: hidden;
+	height: 200px;
+	overflow: hidden;
 }
 
 .portfolio-tax-card-image img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
 }
 
 /* Bottom section */
 .portfolio-tax-card-bottom {
-    background: var(--wp--preset--color--secundary-pale-blue);
-    border-bottom-left-radius: 20px;
-    border-bottom-right-radius: 20px;
-    min-height: 3em;
-    padding: var(--wp--preset--spacing--50);
-    display: flex;
-    flex-direction: column;
-    gap: var(--wp--preset--spacing--20);
+	background: var(--wp--preset--color--secundary-pale-blue);
+	border-bottom-left-radius: 20px;
+	border-bottom-right-radius: 20px;
+	min-height: 3em;
+	padding: var(--wp--preset--spacing--50);
+	display: flex;
+	flex-direction: column;
+	gap: var(--wp--preset--spacing--20);
 }
 
 /* Title */
 .portfolio-tax-card-title {
-    margin: 0;
-    font-size: var(--wp--preset--font-size--large);
-    color: var(--wp--preset--color--primary-blue);
+	margin: 0;
+	font-size: var(--wp--preset--font-size--large);
+	color: var(--wp--preset--color--primary-blue);
 }
 
 .portfolio-tax-card-title a {
-    color: inherit;
-    text-decoration: none;
+	color: inherit;
+	text-decoration: none;
 }
 
 /* Excerpt */
 .portfolio-tax-card-excerpt {
-    font-size: var(--wp--preset--font-size--small);
-    margin: 0;
+	font-size: var(--wp--preset--font-size--small);
+	margin: 0;
 }
 
 .portfolio_tax_header {
-    margin-bottom: 0;
-    padding-top: var(--wp--preset--spacing--80);
-    padding-bottom: var(--wp--preset--spacing--80);
-    font-size: var(--wp--preset--font-size--xxl);
+	margin-bottom: 0;
+	padding-top: var(--wp--preset--spacing--80);
+	padding-bottom: var(--wp--preset--spacing--80);
+	font-size: var(--wp--preset--font-size--xxl);
 }

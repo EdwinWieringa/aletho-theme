@@ -3,7 +3,7 @@
 /**
  * Title: Gradient Pattern
  * Slug: aletho/title-gradient
- * Categories: features
+ * Categories: aletho
  */
 ?>
 

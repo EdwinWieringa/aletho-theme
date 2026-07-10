@@ -2,7 +2,7 @@
 /**
  * Title: Column Pair
  * Slug: aletho/usp-columns
- * Categories: features
+ * Categories: aletho
  */
 ?>
 

@@ -23,10 +23,8 @@ class Aletho_Theme
         add_action('enqueue_block_editor_assets', [$this, 'aletho_block_editor_assets']);
         add_action('enqueue_block_assets', [$this, 'aletho_js_frontend_backend_enqueue']);
 
-        add_action('init', [$this, 'aletho_register_pattern_categories']);
-        add_action('init', [$this, 'aletho_register_icon_variations']);
-
         add_action('init', [$this, 'aletho_register_blocks']);
+        add_action('init', [$this, 'aletho_register_pattern_categories']);
     }
 
     public static function enqueue_theme_styles()
@@ -153,15 +151,6 @@ class Aletho_Theme
         );
     }
 
-    public function aletho_register_icon_variations()
-    {
-        wp_enqueue_script(
-            'aletho-icon-variations',
-            get_template_directory_uri() . '/blocks/icons/icons.js',
-            ['wp-blocks']
-        );
-    }
-
     public static function aletho_js_frontend_backend_enqueue()
     {
         wp_enqueue_script(
@@ -173,20 +162,22 @@ class Aletho_Theme
         );
     }
 
-    // Register custom pattern categories
-    public function aletho_register_pattern_categories()
-    {
-        register_block_pattern_category(
-            'icons',
-            ['label' => __('Icons', 'aletho')]
-        );
-    }
-
     // Register dynamic blocks used by the theme
     public function aletho_register_blocks()
     {
         register_block_type(
             get_template_directory() . '/blocks/portfolio-breadcrumbs'
+        );
+    }
+
+    // Register pattern categories
+    public function aletho_register_pattern_categories()
+    {
+        register_block_pattern_category(
+            'aletho',
+            [
+                'label' => __('Alétho 💎', 'aletho'),
+            ]
         );
     }
 
