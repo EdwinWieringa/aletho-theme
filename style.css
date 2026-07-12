@@ -78,11 +78,8 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
 		gap: 0px !important;
 	}
 
-	.column-pair .wp-block-column {
-		border-radius: 0 !important;
-	}
-
-	.column-pair .wp-block-column p {
+	.column-pair .wp-block-column p,
+	.wp-block-columns .wp-block-column p {
 		padding-inline: 0;
 	}
 
