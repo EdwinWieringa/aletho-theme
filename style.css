@@ -102,8 +102,13 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
 	.wp-block-post-content .wp-block-group h1,
 	.wp-block-post-content .wp-block-group h2,
 	.wp-block-post-content .wp-block-group h3,
+	.wp-block-post-content .wp-block-group h4,
+	.wp-block-post-content .wp-block-group h5,
+	.wp-block-post-content .wp-block-group h6,
 	.wp-block-post-content .wp-block-group p,
-	.wp-block-post-content .wp-block-buttons {
+	.wp-block-post-content .wp-block-group figure,
+	.wp-block-post-content .wp-block-group .wp-block-buttons,
+	.wp-block-post-content .wp-block-group .wpforms-container {
 		padding-inline: 1.5rem;
 	}
 
@@ -118,6 +123,9 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
 	.single-projects-content .wp-block-group h1,
 	.single-projects-content .wp-block-group h2,
 	.single-projects-content .wp-block-group h3,
+	.single-projects-content .wp-block-group h4,
+	.single-projects-content .wp-block-group h5,
+	.single-projects-content .wp-block-group h6,
 	.single-projects-content .wp-block-group p,
 	.single-projects-content .wp-block-group figure,
 	.single-projects-content .wp-block-buttons {
@@ -125,6 +133,11 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
 	}
 
 	.aanbod-menu .wp-block-buttons {
+		padding-inline: 0;
+	}
+
+	.contact-info-block.wp-block-group h2,
+	.contact-info-block.wp-block-group p{
 		padding-inline: 0;
 	}
 
