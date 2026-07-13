@@ -1,7 +1,7 @@
 <!-- wp:template-part {"slug":"header","theme":"aletho","tagName":"header"} /-->
 
-<!-- wp:group {"style":{"spacing":{"margin":{"top":"0","bottom":"0"}}},"gradient":"aletho-light-blue-gradient","layout":{"type":"constrained"}} -->
-<div class="wp-block-group has-aletho-light-blue-gradient-gradient-background has-background" style="margin-top:0;margin-bottom:0">
+<!-- wp:group {"className":"title-gradient","style":{"spacing":{"margin":{"top":"0","bottom":"0"}}},"gradient":"aletho-light-blue-gradient","layout":{"type":"constrained"}} -->
+<div class="wp-block-group title-gradient has-aletho-light-blue-gradient-gradient-background has-background" style="margin-top:0;margin-bottom:0">
     <!-- wp:group {"style":{"spacing":{"margin":{"top":"0","bottom":"0"}}},"layout":{"type":"constrained"}} -->
     <div class="wp-block-group" style="margin-top:0;margin-bottom:0">
         <!-- wp:shortcode -->
@@ -12,13 +12,19 @@
 </div>
 <!-- /wp:group -->
 
+
 <!-- wp:group {"style":{"elements":{"link":{"color":{"text":"var:preset|color|primary-blue"}}}},"textColor":"primary-blue","layout":{"type":"constrained"}} -->
 <div class="wp-block-group has-primary-blue-color has-text-color has-link-color">
     <!-- wp:aletho/portfolio-breadcrumbs /-->
 </div>
 <!-- /wp:group -->
 
-<!-- wp:template-part {"slug":"portfolio-grid"} /-->
 
-<!-- wp:pattern {"slug":"aletho/c2a-banner"} /-->
+<!-- wp:group {"className":"taxonomy-content","layout":{"type":"default"}} -->
+<div class="wp-block-group taxonomy-content">
+    <!-- wp:template-part {"slug":"portfolio-grid"} /-->
+
+    <!-- wp:pattern {"slug":"aletho/c2a-banner"} /-->
+</div>
+<!-- /wp:group -->
 <!-- wp:template-part {"slug":"footer","theme":"aletho","tagName":"footer"} /-->

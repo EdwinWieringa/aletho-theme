@@ -78,14 +78,6 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
 		gap: 0px !important;
 	}
 
-	.column-pair .wp-block-column p,
-	.wp-block-columns .wp-block-column p,
-	.wp-block-columns .wp-block-column h1,
-	.wp-block-columns .wp-block-column h2,
-	.wp-block-columns .wp-block-column h3 {
-		padding-inline: 0;
-	}
-
 	footer .wp-block-group h1,
 	footer .wp-block-group h2,
 	footer .wp-block-group h3,
@@ -106,12 +98,34 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
 		padding-inline: 1.5rem;
 	}
 
-	.wp-block-group h1,
-	.wp-block-group h2,
-	.wp-block-group h3,
-	.cta-section .wp-block-buttons,
-	.wp-block-group p {
+	.title-gradient .wp-block-group h1,
+	.wp-block-post-content .wp-block-group h1,
+	.wp-block-post-content .wp-block-group h2,
+	.wp-block-post-content .wp-block-group h3,
+	.wp-block-post-content .wp-block-group p,
+	.wp-block-post-content .wp-block-buttons {
 		padding-inline: 1.5rem;
+	}
+
+	.taxonomy-content .cta-section h1,
+	.taxonomy-content .cta-section h2,
+	.taxonomy-content .cta-section h3,
+	.taxonomy-content .cta-section p,
+	.taxonomy-content .cta-section .wp-block-buttons {
+		padding-inline: 1.5rem;
+	}
+
+	.single-projects-content .wp-block-group h1,
+	.single-projects-content .wp-block-group h2,
+	.single-projects-content .wp-block-group h3,
+	.single-projects-content .wp-block-group p,
+	.single-projects-content .wp-block-group figure,
+	.single-projects-content .wp-block-buttons {
+		padding-inline: 1.5rem;
+	}
+
+	.aanbod-menu .wp-block-buttons {
+		padding-inline: 0;
 	}
 
 	.wp-block-column > .wp-block-group ul {
@@ -255,7 +269,7 @@ footer a:hover {
 
 h1.wp-block-post-title {
 	hyphens: auto;
-  	overflow-wrap: break-word;
+	overflow-wrap: break-word;
 }
 
 .contact-info-block {

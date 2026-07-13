@@ -1,19 +1,19 @@
 <!-- wp:template-part {"slug":"header","theme":"aletho","tagName":"header"} /-->
 <!-- wp:pattern {"slug":"aletho/title-gradient"} /-->
 
-<!-- wp:group {"tagName":"main","layout":{"type":"constrained"}} -->
-<main class="wp-block-group">
+<!-- wp:group {"tagName":"main","className":"single-projects-content","layout":{"type":"default"}} -->
+<main class="wp-block-group single-projects-content">
 
     <!-- wp:group {"style":{"elements":{"link":{"color":{"text":"var:preset|color|primary-blue"}}}},"textColor":"primary-blue","layout":{"type":"constrained"}} -->
     <div class="wp-block-group has-primary-blue-color has-text-color has-link-color">
         <!-- wp:aletho/portfolio-breadcrumbs /-->
+        <!-- wp:post-featured-image /-->
+        <!-- wp:post-content /-->
     </div>
     <!-- /wp:group -->
 
-    <!-- wp:post-featured-image /-->
-    <!-- wp:post-content /-->
-
+    <!-- wp:pattern {"slug":"aletho/c2a-banner"} /-->
 </main>
 <!-- /wp:group -->
-<!-- wp:pattern {"slug":"aletho/c2a-banner"} /-->
+
 <!-- wp:template-part {"slug":"footer","tagName":"footer"} /-->
