@@ -79,7 +79,10 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
 	}
 
 	.column-pair .wp-block-column p,
-	.wp-block-columns .wp-block-column p {
+	.wp-block-columns .wp-block-column p,
+	.wp-block-columns .wp-block-column h1,
+	.wp-block-columns .wp-block-column h2,
+	.wp-block-columns .wp-block-column h3, {
 		padding-inline: 0;
 	}
 
@@ -89,6 +92,13 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
 	footer .wp-block-group ul,
 	footer .cta-section .wp-block-buttons,
 	footer .wp-block-group p {
+		padding-inline: 0;
+	}
+
+	.portfolio-grid .wp-block-group h1,
+	.portfolio-grid .wp-block-group h2,
+	.portfolio-grid .wp-block-group h3,
+	.portfolio-grid .wp-block-group p {
 		padding-inline: 0;
 	}
 
@@ -249,7 +259,13 @@ footer a:hover {
 }
 
 .aanbod-menu .wp-block-buttons {
-	flex: 1;
+	display: flex;
+	flex-wrap: wrap;
+	gap: 5px;
+}
+
+.aanbod-menu .wp-block-buttons .wp-block-button {
+	width: 170px;
 }
 
 /* Pixel-perfect clone of wp-block-post-template grid */
