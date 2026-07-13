@@ -82,7 +82,7 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
 	.wp-block-columns .wp-block-column p,
 	.wp-block-columns .wp-block-column h1,
 	.wp-block-columns .wp-block-column h2,
-	.wp-block-columns .wp-block-column h3, {
+	.wp-block-columns .wp-block-column h3 {
 		padding-inline: 0;
 	}
 
