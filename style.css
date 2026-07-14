@@ -74,10 +74,6 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
 		max-width: 100% !important;
 	}
 
-	.column-pair {
-		gap: 0px !important;
-	}
-
 	footer .wp-block-group h1,
 	footer .wp-block-group h2,
 	footer .wp-block-group h3,
@@ -99,6 +95,24 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
 	}
 
 	.title-gradient .wp-block-group h1,
+	.title-gradient .wp-block-group h2,
+	.title-gradient .wp-block-group h3,
+	.title-gradient .wp-block-group p {
+		padding-inline: 1.5rem;
+	}
+
+	.homepage-content h1,
+	.homepage-content h2,
+	.homepage-content h3,
+	.homepage-content h4,
+	.homepage-content h5,
+	.homepage-content h6,
+	.homepage-content p,
+	.homepage-content figure,
+	.homepage-content .wp-block-buttons {
+		padding-inline: 1.5rem;
+	}
+
 	.wp-block-post-content .wp-block-group h1,
 	.wp-block-post-content .wp-block-group h2,
 	.wp-block-post-content .wp-block-group h3,
@@ -137,12 +151,8 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
 	}
 
 	.contact-info-block.wp-block-group h2,
-	.contact-info-block.wp-block-group p{
+	.contact-info-block.wp-block-group p {
 		padding-inline: 0;
-	}
-
-	.wp-block-column > .wp-block-group ul {
-		padding-inline: 1.5rem;
 	}
 
 	body .wp-block-columns {
@@ -285,6 +295,13 @@ h1.wp-block-post-title {
 	overflow-wrap: break-word;
 }
 
+@media (min-width: 901px) {
+	.column-pair .wp-block-column .wp-block-group,
+	.column-pair .wp-block-column .wp-block-buttons {
+		padding-inline: 3rem;
+	}
+}
+
 .contact-info-block {
 	position: sticky;
 	top: 110px;
@@ -300,7 +317,12 @@ h1.wp-block-post-title {
 	width: 170px;
 }
 
-/* Pixel-perfect clone of wp-block-post-template grid */
+@media (min-width: 901px) {
+	.wp-block-post-content [id] {
+		scroll-margin-top: 100px;
+	}
+}
+
 .portfolio-overview-grid {
 	display: grid;
 	grid-template-columns: repeat(3, 1fr);
