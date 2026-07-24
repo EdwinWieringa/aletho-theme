@@ -1,0 +1,12 @@
+{
+    "apiVersion": 2,
+    "name": "aletho/project-subexcerpt",
+    "title": "Project Samenvatting",
+    "category": "aletho",
+    "icon": "excerpt-view",
+    "description": "Toont de project subexcerpt of de standaard samenvatting.",
+    "render": "file:./index.php",
+    "supports": {
+        "html": false
+    }
+}

@@ -8,6 +8,7 @@ class Portfolio
     {
         add_action('init', [$this, 'aletho_register_projects_post_type']);
         add_action('init', [$this, 'aletho_register_category_taxonomy']);
+        add_action('init', [$this, 'aletho_register_projects_post_meta']);
 
         // Register custom nested URL rules and override term/project permalinks for the portfolio structure.
         add_action('init', [$this, 'add_nested_rewrite_rules']);
@@ -16,6 +17,7 @@ class Portfolio
 
         add_shortcode('projects_taxonomies', [$this, 'aletho_projects_taxonomies_shortcode']);
         add_shortcode('project_tax_header', [$this, 'aletho_portfolio_tax_header']);
+        add_action('init', [$this, 'register_project_subexcerpt_block']);
 
         add_filter('manage_projects_posts_columns', [$this, 'add_category_column']);
         add_action('manage_projects_posts_custom_column', [$this, 'render_category_column'], 10, 2);
@@ -32,6 +34,8 @@ class Portfolio
         add_action('admin_enqueue_scripts', [$this, 'aletho_taxonomy_enqueue_media']);
         add_filter('manage_edit-projects-category_columns', [$this, 'add_taxonomy_image_column']);
         add_filter('manage_projects-category_custom_column', [$this, 'render_taxonomy_image_column'], 10, 3);
+
+        add_filter('enqueue_block_editor_assets', [$this, 'aletho_projects_editor_assets']);
     }
 
     // Registers the 'projects' CPT for Portfolio entries with /portfolio/ slug,
@@ -58,7 +62,7 @@ class Portfolio
                 'with_front' => false
             ],
             'show_in_rest' => true,
-            'supports' => array('title', 'editor', 'author', 'thumbnail', 'excerpt', 'page-attributes'),
+            'supports' => array('title', 'editor', 'author', 'thumbnail', 'excerpt', 'page-attributes', 'custom-fields'),
         );
 
         register_post_type('projects', $args);
@@ -90,6 +94,17 @@ class Portfolio
         );
 
         register_taxonomy('projects-category', 'projects', $args);
+    }
+
+    // Register the custom sub‑excerpt meta field for Projects.
+    public function aletho_register_projects_post_meta()
+    {
+        register_post_meta('projects', 'project_subexcerpt', [
+            'type'              => 'string',
+            'single'            => true,
+            'show_in_rest'      => true,
+            'sanitize_callback' => 'wp_kses_post',
+        ]);
     }
 
     /**
@@ -234,6 +249,14 @@ class Portfolio
         <h1 class="wp-block-post-title portfolio_tax_header"><?php echo esc_html($name); ?></h1>
     <?php
         return ob_get_clean();
+    }
+
+    // Register the dynamic Project Subexcerpt block.
+    public function register_project_subexcerpt_block()
+    {
+        register_block_type(
+            get_template_directory() . '/blocks/project-subexcerpt'
+        );
     }
 
     /* ------ [Admin] ------ */
@@ -424,6 +447,17 @@ class Portfolio
         return wp_get_attachment_image($image_id, 'thumbnail', false, [
             'style' => 'width:60px;height:60px;object-fit:cover;border-radius:4px;'
         ]);
+    }
+
+    // Load the block editor assets used for the Projects sub‑excerpt UI.
+    public function aletho_projects_editor_assets()
+    {
+        wp_enqueue_script(
+            'project-subexcerpt',
+            get_template_directory_uri() . '/assets/js/editor-subexcerpt.js',
+            ['wp-plugins', 'wp-edit-post', 'wp-components', 'wp-data', 'wp-element', 'wp-core-data', 'wp-dom-ready'],
+            filemtime(get_template_directory() . '/assets/js/editor-subexcerpt.js')
+        );
     }
 
     public static function get_instance()
