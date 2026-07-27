@@ -3,6 +3,12 @@
     "name": "aletho/project-subexcerpt",
     "title": "Project Samenvatting",
     "category": "aletho",
+    "attributes": {
+        "excerptLength": {
+            "type": "number",
+            "default": 30
+        }
+    },
     "icon": "excerpt-view",
     "description": "Toont de project subexcerpt of de standaard samenvatting.",
     "render": "file:./index.php",

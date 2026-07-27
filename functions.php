@@ -36,11 +36,19 @@ class Aletho_Theme
         if (wp_style_is('wpforms-modern-full', 'registered')) {
             $deps[] = 'wpforms-modern-full';
         }
+
         wp_enqueue_style(
             'aletho-wpforms',
             get_template_directory_uri() . '/assets/css/wpforms.css',
             $deps,
             filemtime(get_template_directory() . '/assets/css/wpforms.css')
+        );
+
+        wp_enqueue_style(
+            'aletho-wpconsent',
+            get_template_directory_uri() . '/assets/css/wpconsent.css',
+            null,
+            filemtime(get_template_directory() . '/assets/css/wpconsent.css')
         );
 
         // Enqueue Dashicons for frontend use

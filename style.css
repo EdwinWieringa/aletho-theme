@@ -413,3 +413,8 @@ h1.wp-block-post-title {
 	padding-bottom: var(--wp--preset--spacing--80);
 	font-size: var(--wp--preset--font-size--xxl);
 }
+
+.project-subexcerpt {
+    font-size: var(--wp--preset--font-size--small);
+	margin: 0;
+}
