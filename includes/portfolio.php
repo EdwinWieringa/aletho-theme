@@ -8,7 +8,6 @@ class Portfolio
     {
         add_action('init', [$this, 'aletho_register_projects_post_type']);
         add_action('init', [$this, 'aletho_register_category_taxonomy']);
-        add_action('init', [$this, 'aletho_register_projects_post_meta']);
 
         // Register custom nested URL rules and override term/project permalinks for the portfolio structure.
         add_action('init', [$this, 'add_nested_rewrite_rules']);
@@ -94,17 +93,6 @@ class Portfolio
         );
 
         register_taxonomy('projects-category', 'projects', $args);
-    }
-
-    // Register the custom sub‑excerpt meta field for Projects.
-    public function aletho_register_projects_post_meta()
-    {
-        register_post_meta('projects', 'project_subexcerpt', [
-            'type'              => 'string',
-            'single'            => true,
-            'show_in_rest'      => true,
-            'sanitize_callback' => 'wp_kses_post',
-        ]);
     }
 
     /**

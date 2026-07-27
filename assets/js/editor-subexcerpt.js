@@ -10,15 +10,13 @@ wp.domReady(() => {
         clearInterval(interval);
 
         const SubExcerptField = () => {
-            const [ meta, setMeta ] = useEntityProp('postType', 'projects', 'meta');
-            const currentMeta = meta || {};
+            const [ excerpt, setExcerpt ] = useEntityProp('postType', 'projects', 'excerpt');
 
             return createElement(TextareaControl, {
                 className: 'subexcerpt-field',
                 label: 'Extra Excerpt',
-                value: currentMeta.project_subexcerpt || '',
-                onChange: (value) =>
-                    setMeta({ ...currentMeta, project_subexcerpt: value }),
+                value: excerpt || '',
+                onChange: setExcerpt,
             });
         };
 
