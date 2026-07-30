@@ -108,32 +108,3 @@
 	);
 	color: white;
 }
-
-#wpconsent-container::part(wpconsent-button-accept),
-#wpconsent-container::part(wpconsent-preferences-accept-button) {
-	background-color: var(--wp--preset--color--primary-orange);
-	color: white;
-}
-
-#wpconsent-container::part(wpconsent-button-cancel),
-#wpconsent-container::part(wpconsent-button-preferences),
-#wpconsent-container::part(wpconsent-preferences-save-button),
-#wpconsent-container::part(wpconsent-preferences-cancel-button)  {
-  background-color: var(--wp--preset--color--secundary-light-blue);
-	color: var(--wp--preset--color--primary-blue);
-}
-
-#wpconsent-container::part(wpconsent-button-accept),
-#wpconsent-container::part(wpconsent-button-cancel),
-#wpconsent-container::part(wpconsent-button-preferences),
-#wpconsent-container::part(wpconsent-preferences-accept-button),
-#wpconsent-container::part(wpconsent-preferences-save-button),
-#wpconsent-container::part(wpconsent-preferences-cancel-button) {
-	border-radius: 1rem;
-	font-weight: bold;
-	font-family: inherit;
-	font-size: inherit;
-	font-style: inherit;
-	letter-spacing: inherit;
-	line-height: inherit;
-}

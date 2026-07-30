@@ -1,16 +1,28 @@
-<!-- wp:template-part {"slug":"header","tagName":"header"} /-->
+<!-- wp:template-part {"slug":"header","theme":"aletho","tagName":"header"} /-->
 
-
-<!-- wp:group {"tagName":"main","layout":{"type":"constrained"}} -->
-<main class="wp-block-group">
-
-
-    <!-- wp:heading {"level":1} -->
-    <h1 class="wp-block-heading">404 - Not Found</h1>
-    <!-- /wp:heading -->
-
-
-</main>
+<!-- wp:group {"className":"title-gradient","style":{"spacing":{"margin":{"top":"0","bottom":"0"}}},"gradient":"aletho-light-blue-gradient","layout":{"type":"constrained"}} -->
+<div class="wp-block-group title-gradient has-aletho-light-blue-gradient-gradient-background has-background" style="margin-top:0;margin-bottom:0"><!-- wp:group {"style":{"spacing":{"margin":{"top":"0","bottom":"0"},"padding":{"top":"var:preset|spacing|80","bottom":"var:preset|spacing|80"}}},"layout":{"type":"constrained"}} -->
+<div class="wp-block-group" style="margin-top:0;margin-bottom:0;padding-top:var(--wp--preset--spacing--80);padding-bottom:var(--wp--preset--spacing--80)"><!-- wp:heading {"level":1,"style":{"typography":{"textAlign":"center"}},"fontSize":"larger"} -->
+<h1 class="wp-block-heading has-text-align-center has-larger-font-size">404</h1>
+<!-- /wp:heading --></div>
+<!-- /wp:group --></div>
 <!-- /wp:group -->
 
-<!-- wp:template-part {"slug":"footer","tagName":"footer"} /-->
+<!-- wp:group {"tagName":"main","style":{"spacing":{"margin":{"top":"var:preset|spacing|80","bottom":"var:preset|spacing|80"},"padding":{"top":"var:preset|spacing|60","bottom":"var:preset|spacing|60"}}},"layout":{"type":"constrained","contentSize":"40rem"}} -->
+<main class="wp-block-group" style="margin-top:var(--wp--preset--spacing--80);margin-bottom:var(--wp--preset--spacing--80);padding-top:var(--wp--preset--spacing--60);padding-bottom:var(--wp--preset--spacing--60)"><!-- wp:heading {"level":1,"style":{"typography":{"textAlign":"center"}}} -->
+<h1 class="wp-block-heading has-text-align-center">We kunnen de pagina die je
+zocht helaas niet vinden.</h1>
+<!-- /wp:heading -->
+
+<!-- wp:buttons {"layout":{"type":"flex","justifyContent":"center"}} -->
+<div class="wp-block-buttons"><!-- wp:button {"className":"is-style-light-blue"} -->
+<div class="wp-block-button is-style-light-blue"><a class="wp-block-button__link wp-element-button" href="https://tapijtosaurusrex.nl/"><strong>Terug naar home</strong></a></div>
+<!-- /wp:button -->
+
+<!-- wp:button {"className":"is-style-orange"} -->
+<div class="wp-block-button is-style-orange"><a class="wp-block-button__link wp-element-button" href="https://tapijtosaurusrex.nl/contact/"><strong>Contact opnemen</strong></a></div>
+<!-- /wp:button --></div>
+<!-- /wp:buttons --></main>
+<!-- /wp:group -->
+
+<!-- wp:template-part {"slug":"footer","theme":"aletho","tagName":"footer"} /-->
