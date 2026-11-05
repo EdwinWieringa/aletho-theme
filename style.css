@@ -286,10 +286,6 @@ h1.wp-block-post-title {
 }
 
 @media (min-width: 901px) {
-<<<<<<< Updated upstream
-
-=======
->>>>>>> Stashed changes
 	.column-pair .wp-block-column .wp-block-group,
 	.column-pair .wp-block-column .wp-block-buttons {
 		padding-inline: 3rem;
@@ -327,12 +323,7 @@ h1.wp-block-post-title {
 }
 
 /* Match block theme responsive behavior */
-<<<<<<< Updated upstream
-@media (max-width: 900px) {
-
-=======
 @media (max-width: 1060px) {
->>>>>>> Stashed changes
 	.portfolio-overview-grid,
 	.portfolio-grid .wp-block-post-template {
 		grid-template-columns: repeat(2, 1fr);
