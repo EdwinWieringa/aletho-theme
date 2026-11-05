@@ -52,7 +52,7 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
 }
 
 /* For mobile screens */
-@media (max-width: 900px) {
+@media (max-width: 1060px) {
 	.nav-mobile-wrap {
 		display: block;
 	}
@@ -234,7 +234,7 @@ header:has(> .is-position-sticky) {
 }
 
 /* Mobile override */
-@media (max-width: 900px) {
+@media (max-width: 1060px) {
 	header:has(> .is-position-sticky) {
 		position: static;
 		top: auto;
@@ -286,7 +286,10 @@ h1.wp-block-post-title {
 }
 
 @media (min-width: 901px) {
+<<<<<<< Updated upstream
 
+=======
+>>>>>>> Stashed changes
 	.column-pair .wp-block-column .wp-block-group,
 	.column-pair .wp-block-column .wp-block-buttons {
 		padding-inline: 3rem;
@@ -324,8 +327,12 @@ h1.wp-block-post-title {
 }
 
 /* Match block theme responsive behavior */
+<<<<<<< Updated upstream
 @media (max-width: 900px) {
 
+=======
+@media (max-width: 1060px) {
+>>>>>>> Stashed changes
 	.portfolio-overview-grid,
 	.portfolio-grid .wp-block-post-template {
 		grid-template-columns: repeat(2, 1fr);

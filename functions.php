@@ -25,6 +25,11 @@ class Aletho_Theme
 
         add_action('init', [$this, 'aletho_register_blocks']);
         add_action('init', [$this, 'aletho_register_pattern_categories']);
+
+
+        add_action('admin_menu', [$this, 'add_admin_page']);
+        add_action('admin_init', [$this, 'register_settings']);
+        add_filter('wp_robots', [$this, 'set_robots']);
     }
 
     public static function enqueue_theme_styles()
@@ -186,6 +191,95 @@ class Aletho_Theme
             [
                 'label' => __('Alétho 💎', 'aletho'),
             ]
+        );
+    }
+
+    // Applies noindex and nofollow directives to the intranet page.
+    public function set_robots(array $robots): array
+    {
+        $slugs = get_option('aletho_noindex_pages', []);
+
+        if (is_page($slugs)) {
+            $robots['noindex']  = true;
+            $robots['nofollow'] = true;
+        }
+
+        return $robots;
+    }
+
+    // Adds the admin page for managing pages hidden from search engines.
+    public function add_admin_page(): void
+    {
+        add_theme_page(
+            __('Verborgen pagina\'s', 'aletho'),
+            __('Verborgen pagina\'s', 'aletho'),
+            'manage_options',
+            'robots-settings',
+            [$this, 'render_options_page']
+        );
+    }
+
+    // Renders the admin form for configuring pages excluded from search engines.
+    public function render_options_page(): void
+    {
+        $slugs = (array) get_option('aletho_noindex_pages', []);
+?>
+        <div class="wrap">
+            <h1><?php esc_html_e('Verborgen pagina\'s', 'aletho'); ?></h1>
+            <?php settings_errors(); ?>
+            <form method="post" action="options.php">
+                <?php settings_fields('aletho'); ?>
+
+                <table class="form-table">
+                    <tr>
+                        <th scope="row">
+                            <label for="aletho_noindex_pages">
+                                <?php esc_html_e('Pagina slugs', 'aletho'); ?>
+                            </label>
+                        </th>
+                        <td>
+                            <textarea
+                                id="aletho_noindex_pages"
+                                name="aletho_noindex_pages"
+                                rows="6"
+                                style="max-width: 350px; width: 100%; background-image: linear-gradient(#F1F1F1 50%, #F9F9F9 50%);
+                                    background-size: 100% 4rem; line-height: 2rem; margin: 0 auto; padding: 4px 8px;"><?php echo esc_textarea(implode("\n", $slugs)); ?></textarea>
+
+                            <p class="description">
+                                <?php esc_html_e('Voer één slug per regel in.', 'aletho'); ?>
+                            </p>
+                        </td>
+                    </tr>
+                </table>
+
+                <?php submit_button(); ?>
+            </form>
+        </div>
+<?php
+    }
+    
+    // Registers the settings used to configure pages hidden from search engines.
+    public function register_settings(): void
+    {
+        register_setting(
+            'aletho',
+            'aletho_noindex_pages',
+            [
+                'sanitize_callback' => [$this, 'sanitize_noindex_pages'],
+                'default'           => [],
+            ]
+        );
+    }
+
+    // Sanitizes the configured page slugs.
+    public function sanitize_noindex_pages(mixed $input): array
+    {
+        $slugs = is_array($input)
+            ? $input
+            : preg_split('/\r\n|\r|\n/', $input);
+
+        return array_filter(
+            array_map('sanitize_title', $slugs)
         );
     }
 
