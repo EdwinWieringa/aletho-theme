@@ -91,6 +91,6 @@ div.wpforms-container-full button[type=submit]:active {
 	opacity: 1;
 }
 
-div.wpforms-container-full .wpforms-recaptcha-container.wpforms-is-turnstile {
+/* div.wpforms-container-full .wpforms-recaptcha-container.wpforms-is-turnstile {
 	display: none; 
-}
+} */
